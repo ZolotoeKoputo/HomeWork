@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>question</title>
+</head>
+<body>
+<output>
+	<div class="green" style="color: green;"></div>
+	<div class="red" style="color: red;"></div>
+</output>
+	<script>
+		// створити 10 конфьормів з запитаннями (да, не), вивести % правильних відповідей
+			var answer = [true, false, true, false, true, false, true, false, true, false];
+			var question = ["1) 2+2 = 4?", "2) Львів столиця України?", "3) Рік має 365 днів?", "4) Вам більше 100 років?", "5) Ви людина?", " 6) Ви була на Марсі", " 7) Зараз весна", " 8) Колі 40 років?", " 9) так", " 10) ні"];
+			var res = [];
+			var count = 0;
+			for(var i = 0; i < 10; i++){
+			res[i] = confirm(question[i]);
+			}
+			for(var i = 0; i < answer.length; i++){
+				if(answer[i] == res[i]){
+					document.querySelector("output div.green").textContent += question[i] + " = Вірно; ";
+					count += 10;
+				}else if(answer[i] != res[i]){
+					document.querySelector("output div.red").textContent +=  question[i] + " = Не вірно;";
+				}
+			}
+			alert("Ваш результат становить " + count + "%");
+	</script>
+</body>
+</html>

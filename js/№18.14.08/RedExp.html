@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>регурілярні-2</title>
+</head>
+<body>
+	<div>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet adipisci minima ea, est ipsum in. Quod illum culpa quia, atque adipisci quasi nihil eum dignissimos laborum suscipit perspiciatis! Commodi, totam. Repellendus temporibus accusantium quis provident et, eligendi inventore ducimus eum dolor praesentium recusandae doloribus fugiat vitae magnam, ad iusto natus blanditiis facilis officia eaque iste, dolores maiores qui sint saepe. Voluptatum nihil libero id, quas saepe. Rerum consequuntur hic, omnis. Sint quae obcaecati rerum, sed inventore, itaque, officiis quam suscipit quas ex hic pariatur. Quod enim earum, nostrum quis unde maxime nihil laboriosam, temporibus deleniti consectetur fugit corrupti eum, debitis voluptatum atque! Rerum praesentium rem consectetur repellat perspiciatis, iste a maxime assumenda animi iusto saepe magnam eveniet nihil! Non animi minima nobis similique esse placeat qui libero, modi numquam, nam corporis natus dolores quam adipisci eveniet error quas, labore odit iure quos, molestias. Qui repudiandae, soluta! Eum dolores iusto porro quae officiis culpa laborum dicta laboriosam, aliquam molestiae maiores eveniet autem assumenda quis. Blanditiis sequi tenetur, perspiciatis adipisci. Facilis unde ipsa ea eius odit illum, nihil illo, cumque soluta consectetur hic nemo, earum delectus blanditiis? Dolores provident laudantium incidunt dolorem eos, nostrum aperiam labore saepe magnam rerum ratione minus magni delectus minima vitae maiores, accusantium molestiae, culpa architecto esse aspernatur doloremque tenetur. Quisquam totam illo laudantium in tempore ducimus quasi quaerat, temporibus iusto distinctio. Voluptate praesentium est tempore ratione fugit eaque dolore reprehenderit Iusto nulla iste aliquid eveniet, numquam dolorem, quam. Asperiores dolores debitis vitae quae possimus unde praesentium, excepturi ipsa, maiores adipisci impedit, ad. Magni at asperiores numquam. Impedit incidunt officia odio nobis! Laudantium eum tempore reiciendis voluptate nostrum labore, officia porro, sequi dolorum provident voluptates tenetur culpa fugiat eaque dolorem accusamus debitis et fuga dicta at. Voluptatum quaerat nihil, ab mollitia corporis repellendus error assumenda at rerum, quo, minima. Cum, quae esse debitis dolorum et odit dolore? Tempore Iusto illo inventore temporibus quas maiores fuga quia placeat! Repudiandae dolor praesentium, illum maxime, eum officiis aliquam! Odio perferendis sed sint beatae error illo nihil architecto laborum impedit, esse nemo, iste assumenda quas ipsa iusto voluptatum, quos totam fuga. Accusantium beatae quos quod nam corporis eius expedita, delectus maxime blanditiis dolores quasi officiis, commodi voluptatem consequuntur nulla error alias saepe doloribus ullam laboriosam sed placeat voluptate fugiat modi. Nulla earum quam doloremque alias at vel accusantium illum ullam ducimus, inventore eaque numquam odit delectus. In, vitae, commodi. Dignissimos est tempore, vitae mollitia.
+	</div>
+	<form name = "f"> <br>
+		Шукати: <input type="text" name="word" value="iusto"><br>
+		<input type="checkbox" name="exact"> ціле слово <br>
+		<input type="checkbox" name="icase"> ігнорувати регістр <br>
+		<input type="button" value="Шукати" onclick="go()">
+	</form>
+	<script>
+	function go() {
+		var reKeys = "g";
+		var rePattern = "(\\w*" + f.word.value + "\\w*)";
+		if (f.icase.checked) {
+			reKeys += "i";
+		}
+		if(f.exact.checked){
+			rePattern = "(\\b" + f.word.value + "\\b)";
+		}
+		var re = new RegExp(rePattern, reKeys);
+		var text = document.querySelector("div").textContent;
+		var count = text.match(re);
+		if(count){
+			alert("Знайдено " + count.length + " збігив");
+			document.querySelector("div").innerHTML = text.replace(re, "<b>$1</b>");
+		} else{
+			alert("Збігів не найдено");
+		}
+	}
+	</script>
+</body>
+</html>

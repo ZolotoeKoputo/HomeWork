@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Callback Function</title>
+</head>
+<body>
+	<script>
+		// forEach метод перебора масиву
+		// var m = [2,5,3,6,7,8,10];
+		// m.forEach(function (item) {
+		// 	document.write(" елемент " + item  + "<br>");
+		// });
+		// ==============arr.filter()===================
+		// метод фільтрації
+		 // var m = [2,5,3,-6,7,-8,0,0,0,0,10];
+		 // var arr = m.filter(function (item) {
+		 // 	return item != 0;
+		 // });
+		 // alert(arr);
+
+		 //===================arr.map()===================
+		 // метод заміни масиву
+		 // var m = ["JavaScript", "html", "css"];
+		 // var arr = m.map(function (item) {
+		 // 	return item.length;
+		 // });
+		 // alert(arr);
+		 //======================every/some=============
+		 // методи провірки масиву
+		 // every
+		 // var arr = [2,5,-3,-6,7,-8,10];
+		 // function checkNumber(item) {
+		 // 	return item > 0;
+		 // }
+		 // alert(arr.every(checkNumber));
+		 // // some
+		 // var arr = [2,5,-3,-6,7,-8,10];
+		 // function checkNumber(item) {
+		 // 	return item > 0;
+		 // }
+		 // if(arr.some(checkNumber)){
+		 // 	alert("Знайдено додатнє значеня");
+		 // }
+		 // ===================reduce/reduceRight====================
+		 var arr = [1,2,5,4,3];
+		 var res = arr.reduce(function (prewValue,item) {
+		 	return prewValue + item;
+		 });
+		 alert(res);
+	</script>
+</body>
+</html>

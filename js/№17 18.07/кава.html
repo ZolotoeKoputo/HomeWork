@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Кава</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<form name = "forma"> Вставте купюру
+		<div class="napitok">
+			<select name="spisok"  onchange="f()">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="20">20</option>
+				<option value="50">50</option>
+				<option value="100">100</option>
+			</select>
+					<input type="button" value="add money" onclick="add()">
+					<input type="text" name="t1" value="немає грошей" size="35"> <br>
+					Виберіть напій  <br>
+					<input type="radio" name="a" value="1" onclick="check(this);">вода 1 <br>
+					<input type="radio" name="a" value="3" onclick="check(this);">чай 3 <br>
+					<input type="radio" name="a" value="5" checked onclick="check(this);">кава 5 <br>
+					<input type="radio" name="a" value="10" onclick="check(this);">капучино 10 <br>
+					<input type="checkbox" name="double">подвійна кава<br>
+					<input type="checkbox" name="sugar">цукор<br>
+				<input type="button" value="get drink and money" onclick="ok()"> <br>
+				<input type="text" name="t2" value="здачи немає" size="30"> <br>
+				<!-- <input type="text" name="t3" value="напою немає" size="30"> <br> -->
+				<input type="reset" value="clear"  onclick = "resetForm()">
+		</div>
+			<div class="napitok1"></div>
+			<div class="napitok2"></div>
+			<div class="napitok3"></div>
+			<div class="napitok4"></div>
+	</form>
+	<script src = "main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Progress</title>
+	<style>
+	body{
+		background: #000;
+		text-align: center;
+	}
+	input{
+		padding: 10px 25px;
+		margin: 10px;
+		color: #AE3737;
+		font-size: 18px;
+			border-radius: 10px;
+	}
+		#progress{
+			background: red;
+			height: 60px;
+			width: 0;
+			text-align: center;
+			font-size: 20px;
+		}
+		#img{
+			display: none;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="progress"></div>
+	<input type="button" value="Click" onClick="d()">
+	<div id="img"><img src="1.gif" alt="gif"></div>
+	<script>
+	var elem = document.getElementById("progress"), res = document.querySelector("div"), temp = 0, i = 0, a;
+	
+		function f() {
+			i++;
+			res.textContent = i + "%";
+			temp += 13.5;
+			elem.style.width = temp + "px";
+			if(i > 1){
+				document.querySelector("input").style.display = "none";
+			}
+
+			if(i >= 100){
+				clearInterval(a);
+				res.textContent = "Complete";
+				document.getElementById("img").style.display = "block";
+			}
+		}
+
+		function d() {
+			a = setInterval(f, 50);
+		}
+	</script>
+</body>
+</html>

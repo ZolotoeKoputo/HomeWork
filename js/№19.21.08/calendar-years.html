@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Календар</title>
+	<style>
+		#parent{
+			border: 1px solid #000;
+			width: 600px;
+			margin: 0 auto;
+		}
+		.table{
+			border: 4px double gray;
+			/*width: 600px;*/
+			height: 400px;
+			border-collapse: collapse;
+			text-align: center;
+		}
+		.table td{
+			font-size: 18px;
+		}
+		.table td, .table tr, .table th{
+			border: 1px dotted #322F2F;
+			width: 100px;
+		}
+		.green{
+			background: green !important;
+		}
+		.grey{
+			background: #D4D0D0;
+			
+		}
+	</style>
+</head>
+<body>
+	<div id="parent">
+		<form name="forma">
+			<input type="button" value="create" onclick="f(forma.years.value)">
+			<select name="years">
+				<option value="2010">2010</option>
+				<option value="2011">2011</option>
+				<option value="2012">2012</option>
+				<option value="2013">2013</option>
+				<option value="2014">2014</option>
+				<option value="2015">2015</option>
+				<option value="2016">2016</option>
+				<option value="2017" selected>2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+			</select>
+		</form>
+		<div id="calendar"></div>
+	</div>
+<script>
+	function f(y) {
+		for (var t = 0; t < 12; t++) {
+			var calendar = document.getElementById("calendar"),
+				p = t -1,
+				table = document.createElement("table"),
+				tbody = document.createElement("tbody"),
+				parent = document.getElementById("parent"),
+				arrMonth = ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липинь', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'],
+				arrDay = ["Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота", "Неділя"],
+				date = new Date(y, p, 1),
+				day = date.getDay() - 1,
+				number = 1,
+				realTime = new Date(),
+				realMonth = realTime.getMonth(),
+				realYears = realTime.getFullYear(),
+				nowDay = realTime.getDate(),
+				daysLnMonth = 32 - new Date(y, p, 32).getDate(),
+				previousMonth = t - 1,
+				previousDaysInMonth = 32 - new Date(y, t, 32).getDate(),
+				emptyCells = 0,
+				firstTable = document.querySelector("table");
+
+			if (day == -1) {
+				day = 6;
+			}
+
+			// створення таблиці
+			for (let i = 0; i < 8; i++) {
+				var tr = document.createElement("tr");
+				for (let i = 0; i < 7; i++) {
+					var td = document.createElement("td");
+					tr.appendChild(td);
+				}
+				tbody.appendChild(tr);
+			}
+			table.appendChild(tbody);
+			calendar.appendChild(table);
+			table.className = "table";
+
+			// об'єднання перших 7 колонок
+			table.children[0].children[0].children[0].setAttribute("colspan", "7");
+
+			for (var i = 0; i < 6; i++) {
+				table.rows[0].cells[0].nextElementSibling.remove();
+			}
+			table.rows[0].cells[0].innerHTML = "<span>" + arrMonth[t] + "</span>";
+			table.rows[0].cells[0].style.textAlign = 'center';
+			table.rows[0].cells[0].style.fontWeight = 'bold';
+
+			// заповнення колонок днями тижня, заміна td на th
+			for (var i = 0; i < 7; i++) {
+				var th = document.createElement("th");
+				table.rows[1].replaceChild(th, table.rows[1].cells[i]);
+				table.rows[1].cells[i].textContent = arrDay[i];
+			}
+
+			for (var i = day; i < 7; i++) {
+				table.rows[2].cells[i].textContent = number++;
+			}
+
+			for (var j = 3; j < 8; j++) {
+				for (var i = 0; i < 7; i++) {
+					table.rows[j].cells[i].textContent = number++;
+					if (number == nowDay + 1 && t == realMonth && y == realYears-1) {
+						table.rows[j].cells[i].className = "green";
+					}
+					if (number > daysLnMonth + 1) {
+						table.rows[j].cells[i].textContent = "";
+					}
+				}
+			}
+
+			for (var j = 1; j < 8; j++) {
+				for (var i = 5; i < 7; i++) {
+					table.rows[j].cells[i].style.background = 'red';
+				}
+			}
+
+			for (var j = 6; j < 8; j++) {
+				for (var i = 0; i < 7; i++) {
+					if (table.rows[j].cells[i].textContent == "") {
+						emptyCells++;
+					}
+				}
+			}
+
+			// видалення пустих колонок
+
+			if (emptyCells > 6 && emptyCells < 14) {
+				// table.firstChild.lastChild.remove();
+				table.rows[7].remove();
+			}
+			if (emptyCells == 14) {
+				table.rows[7].remove();
+				table.rows[6].remove();
+			}
+			
+			if (previousMonth == -1) {
+				previousMonth = 12;
+				y = y - 1;
+			}
+			
+			//date instead of emptycells
+			number = 1;
+			for (var j = 6; j < table.rows.length; j++) {
+				for (var i = 1; i < 7; i++) {
+					if (table.rows[j].cells[i].textContent == "") {
+						table.rows[j].cells[i].textContent = number++;
+						table.rows[j].cells[i].className = "grey";
+					}
+				}
+			}
+			for (var i = 5; i >= 0; i--) {
+				if (table.rows[2].cells[i].textContent == "") {
+					table.rows[2].cells[i].textContent = previousDaysInMonth--;
+					table.rows[2].cells[i].className = "grey";
+				}
+			}
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Window</title>
+</head>
+<body>
+	<script>
+	var myW;
+		function f() {
+			var params = "width =" + screen.availWidth + ",height =" + screen.availHeight;
+		myW = window.open("", "", params);
+		// myW.location.href = "https://www.w3schools.com/";
+		// myW.focus(); // на передній план
+		 myW.blur(); // на задній план(не завжди спрацьовує)
+
+			// myW.resizeTo(screen.availWidth/2,screen.availHeight/2);
+
+			// scrollTo(0,100);
+			// scrollBy();
+
+		// setInterval(moveWindow, 50);
+		// myW.moveTo(400, 400);
+		// myW.moveBy(100,100);
+
+		// window.close();	
+			// myW.moveBy(5,5);
+			// myW.resizeBy(5,5);
+		}
+		function closeMe() {
+			close();
+		}
+		function closeNewWindow() {
+			if(myW){
+				if(!myW.closed){
+					myW.close();
+				}else{
+						alert("Вікто вже закрито");
+					}
+			}else{
+				alert("Вікно ще не відкрито");
+			}
+		}
+			function addText() {
+				myW.document.write("<h1>Added text</h1>");
+				myW.focus();
+				myW.document.close();
+			}
+	</script>
+	<input type="button" value="Open window" onclick="f()">
+	<input type="button" value="Close Me" onclick="closeMe()">
+	<input type="button" value="Close New Window" onclick="closeNewWindow()">
+	<input type="button" value="Add Text" onclick="addText()">
+	<!-- <a href="https://my-hit.org/" target="myPage">Link</a> -->
+</body>
+</html>

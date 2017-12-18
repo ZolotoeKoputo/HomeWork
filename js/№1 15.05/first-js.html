@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+	</div>
+	<script>
+	// var rez = prompt("123", 12);
+	// if(rez == null){
+	// 	alert('Canceled'); // Дані не відправленні, повертає null
+	// }
+
+	// var rez = prompt("Enter number", 1);
+	// if(rez < 0){
+	// 	alert("Від'ємне число");
+	// }else if(rez > 0){
+	// 	alert("Додатнє число");
+	// }
+	// else{
+	// 	alert("Не число");
+	// }
+	// бали
+	// var rez = prompt("Введіть кількість балів", 12);
+	// if(rez > 0 && rez < 13){
+	// 	if(rez == 1){
+	// 		alert(rez + " бал");
+	// 	}else if(rez >= 2 && rez <= 4){
+	// 		alert(rez + " бала");
+	// 	}else if(rez >= 5 && rez <= 12){
+	// 		alert(rez + " балів");
+	// 	}
+	// }
+	// else{
+	// 	alert("Поза діапазоном");
+	// }
+	var rez = parseInt(prompt("Введіть кількість балів", 12));
+		switch(rez){
+			case 1: alert(rez+ " бал");break;
+			case 2: 
+			case 3:
+			case 4:
+			case 5: alert(rez+ " бала");break;
+			case 6: 
+			case 7: 
+			case 8: 
+			case 9: 
+			case 10: 
+			case 11: 
+			case 12: alert(rez+ " балів");break;
+			default: alert("Вихід за рендж");
+		}
+	</script>
+</body>
+</html>

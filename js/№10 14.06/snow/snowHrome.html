@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<style>
+#div img{position:absolute;}
+</style>
+</head>
+<body style="background:#000000;">
+<div id="div"  style="width:480px; 
+                      height:321px; 
+                      position:absolute; 
+                      top:20px; left:20px; 
+                      background-image:url(./snow/i9088.jpg); 
+                      border:2px double white; 
+                      overflow:hidden"></div>
+
+<script>
+var div=document.getElementById("div");
+
+for(var j = 0; j < 20; j++){
+	for(var i = 1; i < 6; i++){
+		div.innerHTML+="<img src = './snow/s" +i+ ".gif' >";
+	}
+}
+for(var i = 0; i < document.images.length; i++){
+	document.images[i].style.top = Math.random()* 321  + "px";
+	document.images[i].style.left = Math.random()* 480  + "px";
+}
+function f() {
+	for(var i = 0; i < document.images.length; i++){
+		document.images[i].style.top=(parseInt(document.images[i].style.top)+ 2) + "px";
+		document.images[i].style.left=(parseInt(document.images[i].style.left) + Math.random()* 4-1) + "px";
+		if(parseInt(document.images[i].style.top) > parseInt(div.style.height)){
+			document.images[i].style.top = "0px";
+		}
+		if(parseInt(document.images[i].style.left) > parseInt(div.style.width)){
+			document.images[i].style.left = "0px";
+		}
+	}
+	// доробить, уныверсальны ід чи класи
+}
+setInterval(f,50);
+</script>
+</body>
+</html>

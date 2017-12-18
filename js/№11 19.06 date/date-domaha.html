@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>День народження</title>
+</head>
+<body>
+	<script>
+		var year = parseInt(prompt("Якого ви року?", 1999));
+		var month = parseInt(prompt("Місяця?", 4));
+		var day = parseInt(prompt("Числа?", 1));
+		var week = ["Неділю", "Понеділок", "Вівторок", "Середу", "Четвер", "П'ятницю", "Суботу"];
+		var newMonth = ["Січня", "Лютого", "Березня", "Квітня", "Травня", "Червня", "Липня", "Серпня" , "Вересня" , "Жовтня", "Листопада", "Грудня"];
+		var now = new Date(year, month-1, day);
+
+		alert("Ви народилися у " + week[now.getDay()] + ", " + newMonth[now.getMonth()] + " " + year + "p.");
+	</script>
+</body>
+</html>

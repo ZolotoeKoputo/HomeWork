@@ -1,0 +1,126 @@
+body{
+	/*1359*/
+	font-family: "Verdana", sans-serif;
+}
+div{
+	background: url("1.jpg") no-repeat;
+	width: 400px;
+	height: 280px;
+	position: relative;
+	margin: 5px 0 20px 0;
+}
+div:first-child::before{
+	content: "Первый снег Декабрь, 2014";
+	width: 130px;
+	padding: 10px;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	background: rgba(139, 137, 137, 0.7);
+	font-style: italic;
+}
+div:first-child::first-line{
+	color: #fff;
+	font-weight: bold;
+}
+div:first-child::after{
+	content: "";
+	width: 397px;
+	height: auto;
+	position: absolute;
+	border: 2px solid #ccc;
+	bottom: 0;
+	top: 0;
+}
+div:nth-child(2){
+	left: 300px;
+}
+div:nth-child(2)::before{
+	content: "Первый снег";
+	text-align: center;
+	padding: 10px 0;
+	text-transform: uppercase;
+	color: #fff;
+	position: absolute;
+	width: 100%;
+	background: #FFD200;
+	bottom: 0;
+
+}
+div:nth-child(2)::after{
+	content: "";
+	width: auto;
+	height: auto;
+	position: absolute;
+	border: 5px solid #FFD200;
+	bottom: -15px;
+	top: -15px;
+	left: -15px;
+	right: -15px;
+}
+div:nth-child(3){
+	left: 600px;
+}
+div:nth-child(3)::before{
+	content: "Первый снег Декабрь, 2014";
+	width: 130px;
+	padding: 10px;
+	border-bottom-right-radius: 25px;
+	display: block;
+	position: absolute;
+	top: 0;
+	color: #fff;
+	background: #FF7301;
+	font-style: italic;
+	box-shadow: 6px 5px 12px 0 #3B3A3A;
+
+}
+div:nth-child(3)::after{
+	content: "";
+	width: auto;
+	height: auto;
+	position: absolute;
+	border: 5px solid #FF7301;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+}
+div:nth-child(3)::first-line{
+	color: #fff;
+	font-weight: bold;
+}
+div:last-child{
+	left: 900px;
+	margin-bottom: 30px;
+}
+div:last-child::before{
+	content: "Первый снег";
+	width: 130px;
+	padding: 10px;
+	display: block;
+	position: absolute;
+	width: 370px;
+	text-align: center;
+	border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	bottom: 0;
+	left: 5px;
+	color: #fff;
+	background: #FFE401;
+	text-transform: uppercase;
+	box-shadow: 0 -3px 20px 0 #3B3A3A;
+
+}
+div:last-child::after{
+	content: "";
+	width: auto;
+	height: auto;
+	position: absolute;
+	border: 5px solid #FFE401;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Java Script</title>
+</head>
+<body>
+		<script>
+			function windowOpen() {
+				var myW;
+				var mass1 = ["J", "A", "V", "A"];
+				var mass2 = ["S", "C", "R", "I", "P", "T"];
+
+				for(var i = 0; i < mass1.length; i++){
+					myW = window.open("","", "width = 200, height = 200");
+					myW.document.write(mass1[i]);
+					myW.document.write("<style>body{text-align: center;font-size:60px;background:yellow;color:#fff;}</style>");
+					myW.moveTo(screen.availWidth/2, screen.availHeight/2);
+					myW.moveBy(-400, -200);
+					myW.focus();
+
+					for(var j = 0; j < i; j++){
+						myW.moveBy(200, 0);
+					}
+				}
+
+				for(var i = 0; i < mass2.length; i++){
+					myW = window.open("","", "width = 200, height = 200");
+					myW.document.write(mass2[i]);
+					myW.document.write("<style>body{text-align: center;font-size:60px;background:orange;color:#fff;}</style>");
+					myW.moveTo(screen.availWidth/2, screen.availHeight/2);
+					myW.moveBy(-600, 0);
+					myW.focus();
+
+					for(var j = 0; j < i; j++){
+						myW.moveBy(200, 0);
+					}
+				}
+				
+				// setTimeout(function () {
+					// var q = confirm("Закрити вікна?");
+					// if(q == true){
+						// for(var i = 0; i < 10; i++){
+							// myW.close();
+						// }
+					// }
+				// },7000);
+
+			}
+		</script>
+		<input type="button" value="Open" onclick="windowOpen()" title="Відкриється 10 вікон!">
+</body>
+</html>

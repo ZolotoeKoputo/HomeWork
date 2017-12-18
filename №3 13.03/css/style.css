@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+*{
+	margin: 0 auto;
+}
+body{
+	font-family: 'Roboto', sans-serif;
+	background: url(../img/bac.png);
+	color: #117bc0;
+}
+/*==============  header ==========================*/
+header{
+height: 80px;
+background: rgba(0, 0, 0, 0.3);
+border-bottom: 1px solid #000;
+}
+header > h1{
+	margin-left: 100px;
+	text-align: center;
+	padding-top: 20px;
+}
+header  img{
+	position: absolute;
+	top: 10px;
+	left: 100px;
+
+}
+/*==============  sidbar ==========================*/
+.sidbar{
+height: 100% ;
+width: 265px;
+float: left;
+background: rgba(0, 0, 0, 0.3);
+}
+.sidbar li{
+	list-style: url(../img/intel1.png) inside;
+}
+.sidbar > h2{
+	text-align: center;
+	padding-bottom: 15px;
+	padding-top: 5px;
+}
+.sidbar li{
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+.sidbar a{
+	font-size: 18px;
+	color: #3BADED;
+	text-decoration: none;
+	transition:  0.3s;	
+}
+.sidbar a:hover{
+	color: #045887;
+	transition:  0.3s;
+}
+.sidbar del a{
+	color: #045887;
+}
+.sidbar > .i7{
+	padding-bottom: 6px;
+}
+/*==============  main ==========================*/
+.ref{
+	width: 80%;
+	height: 762px;
+	float: right;
+}
+.main{
+	margin-right: 100px;
+	float: right;
+}
+.main > img{
+position: absolute;
+top: 250px;
+left: 525px;
+}
+.main .box{
+	position: absolute;
+	top: 500px;
+	left: 511px;
+	transition: ease-in-out 1.5s;
+}
+.main .box:hover{
+	transform: rotate(360deg);
+	 transition: ease-in-out 1.5s;
+}
+.main .imgp{
+	position: absolute;
+	left: 280px;
+	top: 140px;
+}
+.main .img3{
+	position: absolute;
+	left: 280px;
+	top: 330px;
+}
+.main .img5{
+	position: absolute;
+	left: 280px;
+	top: 520px;
+}
+.main .img7{
+	position: absolute;
+	left: 280px;
+	top: 700px;
+}
+.main > p{
+color: #fff;
+padding-top: 30px;
+font-size: 20px;
+text-align: center;
+padding-right: 120px;
+}
+/*========================= content =================*/
+content{
+color: #fff;
+}
+content h2{
+text-align: center;
+margin-top: 20px;
+}
+content p{
+	padding-top: 25px;
+	margin-right: 20px;
+	margin-left: 400px;
+	font-size: 20px;
+}
+content .proc_pen{
+	transition: linear 1s;
+	display: block;
+	padding: 15px 0;
+}
+content .proc_pen:hover{
+	transform: rotateX(25deg);
+	transition: linear 1s;
+
+}
+content .proc_i3{
+	transition: linear 1s;
+	float: right;
+	margin: 15px 25px;
+}
+content .proc_i3:hover{
+	transform: rotateX(25deg);
+	transition: linear 1s;
+}
+content .proc_i5{
+	transition: linear 1s;	
+	float: right;
+	margin: 110px 15px 10px 15px;
+}
+content .proc_i5:hover{
+	transform: rotateX(25deg);
+	transition: linear 1s;	
+}
+content .proc_i7{
+	transition: linear 1s;	
+	display: block;
+	margin-top: 25px;
+}
+content .proc_i7:hover{
+	transform: rotateX(25deg);
+	transition: linear 1s;	
+}
+/*==================== footer ================*/
+footer{
+	clear: both;
+	height: 50px;
+	border-top: 1px solid #000;
+	background: rgba(0,0,0, 0.3);
+}
+footer h5{
+	text-align: center;
+	padding-top: 15px;
+}

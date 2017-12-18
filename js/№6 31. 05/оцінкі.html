@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Оцінки</title>
+</head>
+<body>
+	<script>
+		var spanRed = "<span style = 'color: red'>";
+		var spanYellow = "<span style = 'color: yellow'>";
+		var spanGreen = "<span style = 'color: green'>";
+		var spanEnd = "</span>";
+		var marks = [];
+		var counts = [];
+		do{
+			var a = prompt("Enter number", 12);
+			if(a == null){break;}
+			var n = parseInt(a);
+			if(n > 12 || n < 1 || isNaN(n)){
+				alert("Wrong number")
+			}else{
+				marks.push(n);
+			}
+		}while(true);
+		for (var i = 0; i <=12; i++) {
+			counts[i] = 0;
+		}
+			for(var i = 0; i < marks.length; i++){
+				counts[marks[i]]++;
+			}
+			for (var i = 1; i < counts.length; i++) {
+				// document.write("<br>Оцінка " + i + " отриманна " + counts[i] + " раз");
+				if(i < 6){
+				document.write(spanRed + "<br>Оцінка " + i + " отриманна " + counts[i] + " раз" + spanEnd );
+				}
+				if(i < 10 && i >= 6){
+				document.write(spanYellow + "<br>Оцінка " + i + " отриманна " + counts[i] + " раз" + spanEnd );
+				}
+				if(i >=10){
+					document.write(spanGreen + "<br>Оцінка " + i + " отриманна " + counts[i] + " раз" + spanEnd );
+				}
+			}
+			document.write("<br> Всьо отриманно " + marks.length + " оцінок");
+		// var arr = [];
+		// for (var i = 0; i < 10; i++) {
+		// 	arr["ind " + i] = " Number " + i;
+		// 		}
+		// 		alert(arr["ind 5"]);
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<style>
+#main {
+	position:relative;
+	margin: 100px auto;
+	width: 	600px;
+	height: 400px;
+}
+#scr {
+	width: 600px;
+	height: 400px;
+	margin-top:20px;
+	background-color: white;
+	border: 2px solid black;
+	border-radius:10px;
+}
+button {
+	position: absolute;
+	top: 150px;
+	width: 25px;
+	height: 70px;
+	font: 12pt arial,tahoma,sans-serif;
+	text-align: center;
+}
+.left {
+	left:15px;
+}
+.right {
+	right:15px;
+}
+</style>
+<script>
+var slider = {
+	slides:['1.jpg','2.jpg','3.jpg'],
+	frame:0, // текущий кадр для отбражения - индекс картинки из массива
+	set: function(image) { // установка нужного фона слайдеру
+		document.getElementById("scr").style.backgroundImage = "url("+image+")";
+	},
+	init: function() { // запуск слайдера с картинкой с нулевым индексом
+		this.set(this.slides[this.frame]);
+	},
+	left: function() { // крутим на один кадр влево
+		this.frame--;
+		if(this.frame < 0) this.frame = this.slides.length-1;
+		this.set(this.slides[this.frame]);
+	},
+	right: function() { // крутим на один кадр вправо
+		this.frame++;
+		if(this.frame == this.slides.length) this.frame = 0;
+		this.set(this.slides[this.frame]);		
+	}
+};
+window.onload = function() { 
+	slider.init();
+};
+</script>
+<body>
+<div id="main">
+	<button class="left" onclick="slider.left();"><</button>
+	<div id="scr"></div>
+	<button class="right" onclick="slider.right();">></button>
+</div>	
+</body>
+</html>

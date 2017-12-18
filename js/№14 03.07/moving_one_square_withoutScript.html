@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Untitled Document</title>
+</head>
+<body>
+<div id="div" style="width:15px; height:15px; background:#0000FF; position:absolute;top:0; left:0; overflow:hidden;border-radius:50%;"></div>
+<script>
+var div = document.getElementById("div");
+var coordX = coordY = 0;
+var tempY = tempX = 0;
+
+function moveDW() {
+		tempY += (coordY - parseInt(div.style.top))/10;
+		tempX += (coordX - parseInt(div.style.left))/10;
+		div.style.top = tempY + "px";
+		div.style.left = tempX + "px";
+}
+setInterval(moveDW, 20);
+document.onmousedown = function () {
+	coordX = event.clientX;
+	coordY = event.clientY;
+}
+</script>
+</body>
+</html>

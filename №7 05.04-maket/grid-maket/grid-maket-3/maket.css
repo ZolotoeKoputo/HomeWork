@@ -1,0 +1,250 @@
+body{
+	margin: 0 auto;
+	background: #F2E9E9;
+	font-family: "Verdana", sans-serif;
+}
+.wrapper{
+	width: 1440px;
+	max-width: 100%;
+	margin: 0 auto;
+	display: -ms-grid;
+	display: grid;
+	grid-column-gap: 5px;
+	grid-row-gap: 10px;
+	-ms-grid-rows: 80px minmax(550px, 1fr) 40px;
+	    grid-template-rows: 80px minmax(550px, 1fr) 40px;
+	-ms-grid-columns: 200px 1fr 200px;
+	    grid-template-columns: 200px 1fr 200px;
+	grid-template-areas:
+	". header ."
+	"nav aside sidebar"
+	"footer footer footer"
+	 ;
+}
+header{
+	font-family: 'Cuprum', "Verdana", sans-serif;
+	grid-area: header;
+	background: #2E2222;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	overflow: hidden;
+	-ms-flex-pack: distribute;
+	    -webkit-justify-content: space-around;
+	        justify-content: space-around;
+}
+nav{ 
+	grid-area: nav;
+	background: #fff;
+}
+article{
+	grid-area: aside;
+	background: #fff;
+	padding: 10px;
+}
+article dt{
+	color: #30F239;
+}
+article dd span{
+	color: #FF7200;
+}
+article h2{
+	text-transform: uppercase;
+	text-align: center;
+}
+aside{
+	grid-area: sidebar;
+	background: #fff;
+}
+footer{
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-pack: center;
+	        -webkit-justify-content: center;
+	        justify-content: center;
+	-ms-flex-align: center;
+	        -webkit-align-items: center;
+	        align-items: center;
+	position: sticky;
+	bottom:  0;
+	grid-area: footer;
+	background: #2E2222;
+}
+footer  a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 18px;
+	
+}
+.header-menu{
+	position: relative;
+	top: 3px;
+	color: #fff;
+}
+h1{
+	position: relative;
+	color: #fff;
+	
+}
+
+h1::before{
+	content: '';
+	width: 0;
+	height: 3px;
+	background: #33bdf1;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	transition: .5s;
+	/*mix-blend-mode: multiply;*/
+}
+h1::after{
+	content: '';
+	width: 0;
+	height: 3px;
+	background: #ff2117;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	transition: .5s;
+	/*mix-blend-mode: multiply;*/
+}
+h1:hover{
+	cursor: pointer;
+	color: #EAE6E6;
+}
+h1:hover::before{
+	width: 50%;
+	-webkit-transform: translateX(100%);
+	        -ms-transform: translateX(100%);
+	    transform: translateX(100%);
+
+}h1:hover::after{
+	width: 50%;
+	-webkit-transform: translateX(-100%);
+	        -ms-transform: translateX(-100%);
+	    transform: translateX(-100%);
+
+}
+.header-menu ul{
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	padding: 0;
+}
+.header-menu li{
+	text-transform: uppercase;
+	text-align: center;
+	width: 45px;
+	list-style: none;
+	padding: 15px;
+	margin: 0 10px;
+	background: #1D1414;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: 1s all ease;
+	border-bottom: 2px solid #fff;
+
+	
+}
+.header-menu li:hover{
+	background: #0C0808;
+	box-shadow: inset 0 0 0 1px #fff;
+	transition: 1s all ease;
+}
+.header-menu a{
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+nav{
+	background: #2E2222;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-direction: column;
+	        -webkit-flex-direction: column;
+	        flex-direction: column;
+}
+nav h2{
+	color: #fff;
+	margin: 0;
+	padding: 15px;
+	background: #2E2222;
+	text-align: center;
+	text-transform: uppercase;
+}
+nav ul{
+	padding: 0;
+}
+nav ul li{
+	box-shadow: 0 0 5px 1px #000;
+	list-style: none;
+	margin: 15px 0;
+	/*border-bottom: 1px solid #2E1A1A;*/
+	text-align: center;
+	background: #fff;
+	padding: 10px;
+}
+nav li a{
+	position: relative;
+	text-decoration: none;
+	color: #000;
+	font-size: 18px;
+	padding: 15px;
+	transition: .5s;
+	cursor: default;
+}
+/*nav li a:hover{
+	color: #7C5858;
+	transition: .5s;
+}*/
+aside{
+	background: #2E2222;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-direction: column;
+	        -webkit-flex-direction: column;
+	        flex-direction: column;
+}
+aside h2{
+	color: #fff;
+	margin: 0;
+	padding: 15px;
+	background: #2E2222;
+	text-align: center;
+	text-transform: uppercase;
+}
+aside ul{
+	padding: 0;
+}
+aside ul li{
+	box-shadow: 0 0 5px 1px #000;
+	list-style: none;
+	margin: 15px 0;
+	text-align: center;
+	background: #fff;
+	padding: 10px;
+}
+aside li a{
+	position: relative;
+	text-decoration: none;
+	color: #000;
+	font-size: 18px;
+	padding: 15px;
+	transition: .5s;
+	cursor: default;
+}
+
+/*aside li a:hover{
+	color: #7C5858;
+	transition: .5s;
+}*/
+
+article{
+
+}
+/*========================================================*
+

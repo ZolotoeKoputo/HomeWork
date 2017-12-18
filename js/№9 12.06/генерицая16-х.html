@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>генерація кольору</title>
+</head>
+<body>
+	<script>
+		var arr = [0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"];
+		var hexCode = "#";
+		for(var i = 0; i < 6; i++){
+			hexCode += arr[Math.floor(Math.random() *16)];
+		}
+		alert(hexCode);
+	</script>
+</body>
+</html>

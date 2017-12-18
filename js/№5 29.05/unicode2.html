@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2</title>
+</head>
+<body>
+	<div>Paste Unicode:</div>
+	<output></output>
+	<script>
+		var arr = [];
+		var str = prompt("Enter text", "106 97 118 97 115 99 114 105 112 116");
+		for(var i = 0; i < str.length; i++){
+			arr = str.split(" ");
+		}
+		for(var i = 0; i < arr.length; i++){
+			document.querySelector("output").textContent+= String.fromCharCode(arr[i]);
+		}
+	</script>
+</body>
+</html>

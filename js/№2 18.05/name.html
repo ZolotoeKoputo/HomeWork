@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>alert, prompt, confirm</title>
+</head>
+<body>
+	<script>
+		var name = prompt("Введіть ваш ПІБ: ", "Льоша");
+		if(name == ""){
+			// alert("Поле з ПІБ було не заповнене!");
+				for(var i = 0; name == ""; i++){
+					name = prompt("Введіть ПІБ повторно:", "Льоша");
+				}
+		}
+		var email = prompt("Введіть ваш email:", "alex279368@gmail.com"); // як зробити валідацію?
+		if(email == ""){
+			for(i = 0; email == ""; i++){
+				email = prompt("Введіть email повторно:", "@gmail.com");
+			}
+		}
+		var years = parseInt(prompt("Введіть ваш вік:", "18"));
+		if(years == ""){
+			for(i = 0; years == ""; i++){
+				years = parseInt(prompt("Введіть вік повторно:", "18"));
+			}
+		}/*else if(years != parseInt()){
+				years = parseInt(prompt("Не коректні дані, введіть вік повторно:")); // як правильно оформити цикл для того щоб вводитися тільки цифри
+		}*/
+		var sex = prompt("Введіть вашу стать: \n Чоловік*  \n Жінка*", "Чоловік");
+		if(sex == ""){
+			for(i = 0; sex == ""; i++){
+				sex = prompt("Введіть стать повторно: \n Чоловік*  \n Жінка*", "Чоловік");
+			}
+		}else if(sex != "Чоловік" && sex != "Жінка" && sex != "чоловік" && sex != "жінка"){
+			for(i = 0; sex != "Чоловік" && sex != "Жінка" && sex != "чоловік" && sex != "жінка"; i++){
+				sex = prompt("Введіть стать повторно: \n Чоловік*  \n Жінка*");break;
+			}
+		}
+		var rez = confirm("Перевіремо ваші дані \n" +
+				"Ваш ПІБ: " + name +
+				"\nВаш email: " + email +
+				"\nВаш вік: " + years +
+				"\nВаша стать: " + sex);
+		
+				if(rez == true){
+					alert("Вітаю!");
+				}else{
+					alert("Давайте спробуємо все спочатку");
+				}
+		
+	</script>	
+</body>
+</html>

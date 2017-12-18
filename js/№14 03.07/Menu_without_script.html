@@ -1,0 +1,136 @@
+<html>
+<head>
+<style type="text/css">
+*{box-sizing:border-box;}
+#parent a
+	{
+		display:block;
+		padding:10px 0;
+		text-decoration:none;
+		border:double #000000;
+		background: #FF0066;
+		width:200px;color:white;
+	}
+#top1, #top2, #top3, #top4, #top5, #top6
+	{
+		background:#990000;
+		border:double #660000;
+		font:bold 10pt tahoma;
+		color:white;
+		width:200px;
+		height:50px;
+		text-align:center;
+		padding:10px 0 0 0;
+		position:absolute;top:0;
+		overflow:hidden;
+	}
+	
+#top1{left:0;}
+#top2{left:200px;}
+#top3{left:400px;}
+#top4{left:600px;} 
+#top5{left:800px;}		
+#top6{left:1000px;}	
+	
+#bottom1, #bottom2, #bottom3, #bottom4, #bottom5,  #bottom6
+	{
+	visibility:hidden;
+	background:#990000;
+	font:bold 10pt tahoma;
+	color:white;
+	width:200px;
+	text-align:center;
+	padding:0;
+	position:absolute;top:50px;
+	
+	}
+
+#bottom1{left:0;}
+#bottom2{left:200px;}	
+#bottom3{left:400px;}
+#bottom4{left:600px;}
+#bottom5{left:800px;}
+#bottom6{left:1000px;}
+
+#parent
+	{
+	width:1203px;
+	position:absolute;
+	top:2px; left:10px;
+	height:50px;
+	
+	}
+</style>
+<meta charset"=utf-8">
+<title>Untitled Document</title>
+</head>
+<body style="background:#000000; margin:0; padding:0;">
+<div id="parent">
+	<div id="top1">MAIN LINK</div>
+	<div id="bottom1">
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	</div>
+
+	<div id="top2">MAIN LINK</div>
+	<div id="bottom2">
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	</div>
+
+	<div id="top3">MAIN LINK</div>
+	<div id="bottom3">
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	</div>
+
+	<div id="top4">MAIN LINK</div>
+	<div id="bottom4">
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	</div>
+
+	<div id="top5">MAIN LINK</div>
+	<div id="bottom5">
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	</div>
+
+	<div id="top6">MAIN LINK</div>
+	<div id="bottom6">
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	<a href="#" >LINK</a>
+	</div>	
+</div>
+<script>
+function showMenu() {
+document.getElementById("bottom" + event.srcElement.id.substring(3)).style.visibility = "visible";
+}
+
+function hideMenu() {
+	if(event.toElement.id.substr(0,5) != "bottom" && event.toElement.tagName != "A"){
+		for(var i = 1; i <= 6; i++){
+			document.getElementById("bottom" + i).style.visibility = "hidden";
+		}
+	}
+}
+	for(var i = 1; i <= 6; i++){
+		document.getElementById("top" + i).onmouseover = showMenu;
+		document.getElementById("top" + i).onmouseout = hideMenu;
+		document.getElementById("bottom" + i).onmouseout = hideMenu;
+	}
+</script>
+</body>
+</html>

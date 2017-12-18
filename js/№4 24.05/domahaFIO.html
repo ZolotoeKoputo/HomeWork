@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ПІБ</title>
+</head>
+<body>
+	<script>
+		// Фамилия И. О. проверка чи з великої написана, після ініціалів точкі
+		var pib,
+			surname,
+			name,
+			I,
+			B,
+			str;
+		do{
+			str = prompt("Вкажіть ПІБ:", "балаушко о с");
+		}
+		while(str == "");
+		 	pib = str.trim();
+		 	pib = pib[0].toUpperCase() + pib.slice(1);
+		 	surname = pib.slice(0, pib.indexOf(" "));
+		 	name = pib.slice(pib.indexOf(" ")+1, pib.lastIndexOf(".")+1);
+		 	name = name.toUpperCase();
+		 		I = name.slice(0, name.indexOf(" "));
+		 		B = name.slice(name.indexOf(" ")+1, name.lastIndexOf("."));
+		 		if(I.includes(".") == false  || B.includes(".") == false){
+		 			name = (I + "." + B + ".");
+		 		}
+		 	// if(I == false || B == false){
+		 	// 		pib = prompt("Заповніть поле правильно", "Балаушко О. С.");
+		 			
+		 	// }else
+		alert(surname + " " + name);
+	</script>
+</body>
+</html>

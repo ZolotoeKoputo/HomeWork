@@ -1,0 +1,264 @@
+*{
+	margin: 0 auto;
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+body{
+		font-family: 'Roboto', sans-serif;
+		background: url(../img/bac.png);
+		color: #fff;
+}
+@bacg-color:  #0071c5;
+@hover-color: #013E6B;
+/*====================================================== main ====================================================*/
+.main{ 
+	.dl{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.header{
+		background: @bacg-color;
+		color: #fff;
+		align-items: center;
+		h1{
+			flex: 1 1;
+			text-align: center;
+			margin: 0 25px;
+			padding-right: 135px;
+			flex-wrap: wrap;
+		}
+
+		.images{
+					flex-basis: 150px;
+					text-align: center;
+				img{
+					margin: 10px 0;
+			}
+		}
+	}
+/*========================================================== menu ==================================================*/
+	.menu{
+		border-top: 1px solid @hover-color; 
+		background: @bacg-color;
+		align-content: flex-start;
+		padding: 10px;
+		a{
+			padding: 10px;
+			color: #fff;
+			text-decoration: none;
+			font-weight: bold;
+			transition: 0.3s;
+			&:hover{
+				background: @hover-color;
+				transition: 0.3s;
+			}
+		}
+	}
+	/*================================================= text ===========================================*/
+		.text{
+			background-color: rgba(0, 0, 0, 0.3);
+			h2{
+				padding: 15px 15px;
+				text-align: center;
+				font-size: 25px;
+			}
+			p{
+				text-align: justify;
+				text-indent: 1.5em;
+				padding: 15px;
+				color: #fff;
+				font-size: 18px;
+			}
+			img{
+				display: flex;
+				padding: 10px;
+			}
+		}
+/*=================================================== sidbar ===============================================*/
+	.main-menu{
+			border-top: 1px solid @hover-color;
+			padding: 5px;
+				list-style: none;
+		  		color: #fff;
+				background: @bacg-color;
+	 .one {
+	 	width: 170px;
+	 	text-align: center;
+			font-weight: bold;
+			transition: 0.3s;
+			margin-bottom: 5px;
+	 	padding: 10px;
+	    position: relative;
+	    display: inline-block;
+	    margin-right: -4px;
+	    &:hover{
+				color:#484848;
+				transition: 0.3s;	    	
+	    }
+	    &:hover .pr{
+			display: block;
+		    }
+	    a {
+	    	color: #fff;
+	    	background: @bacg-color;
+	    display: block;
+	    margin-left: -1px;
+	    padding: 8px 10px;	
+	}
+}
+.pr{
+	width: 170px;
+	display: none;    
+	position: absolute;
+    margin: 10px;
+    padding: 0;
+    left: 10px;
+    list-style: none;
+   a{
+   	border-bottom: 1px solid @hover-color;
+   	text-decoration: none;
+   	 &:hover{
+    	background: @hover-color;
+		transition: 0.3s;
+    }
+   }
+}
+			del {
+					cursor: not-allowed;
+					background: @hover-color;
+					color: #000;
+					padding: 10px;
+	
+			}
+}
+/*===================================================== content ===========================================*/
+	.content{
+		background-color: rgba(0, 0, 0, 0.3);
+		p{		
+			text-align: justify;
+			border-bottom: 1px solid @hover-color;
+				text-indent: 1.5em;
+				padding: 15px;
+				color: #fff;
+				font-size: 18px; 
+		}
+	}
+	/*================================================= footer ============================================*/
+	footer{
+	display: flex;
+	flex-wrap: wrap;
+	height: 200px;
+	width: 100%;
+	background: #fff;
+	color: #000;
+	font-weight: bold;
+	img{
+		height: 64px;
+		margin: auto;
+		padding: 10px;
+	}
+	h5{
+		margin: auto;
+	}
+	p{
+		padding: 5px;
+		margin: auto;
+	}
+		
+
+		#scrollup {
+			position: fixed; /* фиксированная позиция */
+			opacity: 0.8; /* прозрачность */
+			padding: 5px 5px 2px 5px; /* отступы */
+			background: @bacg-color;
+			border-radius: 5px; /* скругление углов */
+			right:  10px; /* отступ слева */
+			bottom: 10px; /* отступ снизу */
+			display: none; /* спрятать блок */
+			cursor: pointer;
+			img{
+				padding: 0;
+			}
+		}
+	}
+}
+/*========================================================== media ===========================================*/
+@media (min-width: 735px) and (max-width: 1217px){
+	.main{
+		.sidbar{
+			.pr{
+				flex-basis: 50%;
+				text-align: center;
+				li{
+					padding-right: 50px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 617px) {
+   .main{
+   	.sidbar{
+   		h2{
+   			flex-basis: 100%;
+   		}
+   		.pr{
+   			ul{
+   				padding: 0 0 10px 0;
+   				margin: 0;
+   			}
+   			flex-basis: 250px;
+   			li{
+   			text-align: center;
+				a{
+					flex-basis: 100%;
+
+				}
+   			}
+   		}
+   	}
+   	.header{
+   			h1{
+	   			flex-basis: 100%;
+	   			padding-right: 0;
+	   			padding-bottom: 10px;
+   			}
+   		}
+   }
+}
+@media (min-width: 400px ) and (max-width: 516px){
+	.main{
+		.menu{
+			.sidbar{
+				h2{
+				font-size: 20px;
+				}
+			}
+			flex-direction: column;
+			a{
+				margin: 0;
+				text-align: center;
+			}
+		}
+	}
+	.sidbar{
+		h2{
+			width: 350px;
+			}
+	}
+}
+@media screen and (max-width: 400px){
+	.main{
+		.menu{
+			flex-direction: column;
+			a{
+				margin: 0;
+				text-align: center;
+			}
+		}
+	}
+}
+@media screen and (max-width: 310px){
+	footer{
+		flex-direction: column;
+	}	
+}

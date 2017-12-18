@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<script src = "jquery-3.2.1.js"></script>
+	<style>
+	
+	</style>
+</head>
+<body>
+<button>Go</button>
+<a href="https://www.google.com.ua/">Link</a>
+	<script>
+		$(function() {
+			// function f(event) {	
+			// 	console.log(event.data.name + " " + event.data.age);
+			// }
+			// $("button").on("click",({name: "Vasya", age: 35}),f);
+			// $("body, div, p, span").on("click", function () {
+			// 	$(this).css('background', 'yellow');
+			// });
+			$("a").on("click", function () {
+				// event.preventDefault();
+				console.log("hello");
+				// event.stopImmediatePropagation();
+				return false;
+			});
+			$("a").on("click", function () {
+				console.log("hello again");
+				return false;
+			})
+		});
+	</script>
+</body>
+</html>

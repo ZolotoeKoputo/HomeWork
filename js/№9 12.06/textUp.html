@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>textUp</title>
+</head>
+<body>
+<div id="parent" style="width: 200px;
+			height: 600px;
+			position: relative;
+			margin: 0 auto;
+			border: 1px solid grey;
+			background: #000; 
+			overflow: hidden;">
+		<div id="child" style="position: absolute;
+			left: 0;
+			color: #fff;
+			padding: 12px;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, quod, omnis. Asperiores laboriosam, ipsa ipsam odio eveniet placeat blanditiis voluptatum odit a facilis optio doloremque pariatur, ipsum possimus unde voluptates.
+		</div>
+</div>
+	<script>
+		var parent = document.getElementById("parent"),
+			child = document.getElementById("child"),
+			speed = 5,
+			coord = parseInt(parent.style.height);
+
+		child.style.top = parent.style.height;
+
+			function f() {
+				coord -= speed;
+				child.style.top = coord + "px";
+			}
+			setInterval(f, 50);
+	</script>
+</body>
+</html>

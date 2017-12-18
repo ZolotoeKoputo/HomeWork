@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Evants</title>
+</head>
+<body id="body">
+<div id="div" style="width: 50px; height: 50px; background: blue; position: absolute;"></div>
+<!-- <input type="button" value="Go" id="button"> -->
+	<script>
+		// var button = document.getElementById("button");
+		// button.onclick = function() {
+		// 	alert("click");
+		// }
+
+		// button.onclick = f;
+		// function f() {
+		// 	alert("click");
+		// }
+		// button.addEventListener("click", function(){
+		// 	alert("Hello");
+		// });
+
+		// button.addEventListener("click", function(){
+		// 	alert("Hello again");
+		// });
+
+		// function f() {
+		// 	alert("Hello");
+		// }
+		// button.removeEventListener("click",f);
+		// button.addEventListener("click", f);
+		// button.addEventListener("click", f);
+
+		// button.onclick = function () {
+		// 	alert("Hello");
+		// }
+		// button.onclick = function () {
+		// 	alert("Hello again");
+		// }
+
+		// var body = document.getElementById("body");
+		// function changeBG() {
+		// 	this.style.backgroundColor = "red";
+		// }
+		// function clearBG() {
+		// 	this.style.backgroundColor = "";
+		// }
+		// body.onmousedown = changeBG;
+		// body.onmouseup = clearBG;
+
+		// function f() {
+			// alert(event.offsetX + "\n" + event.offsetY); відносто елемента
+			// alert(event.clientX + "\n" + event.clientY); відносно вікна
+			// alert(event.pageX + "\n" + event.pageY); відносто сторінки
+			// alert(event.screenX + "\n" + event.screenY); відносто екрана
+		// }
+		// document.querySelector("div").onclick = f;
+		var flag = false;
+		var x, y;
+		var div = document.getElementById("div");
+		function mouseDown() {
+				if(event.srcElement.tagName == "DIV"){
+					flag = true;
+				}
+		}
+		function mouseUp() {
+			flag = false;
+
+		}
+		function mouseMove() {
+			if(flag){
+				x = event.clientX - 25;
+				y = event.clientY - 25;
+				div.style.left = x + "px";
+				div.style.top = y + "px";
+			}
+		}
+		document.onmousedown = mouseDown;
+		document.onmouseup = mouseUp;
+		document.onmousemove = mouseMove;
+	</script>
+</body>
+</html>

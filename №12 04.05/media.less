@@ -1,0 +1,42 @@
+@media (min-width: 640px){
+	footer{
+		flex-direction: row;
+	}
+}
+@media (min-width: 768px){
+	header{
+		flex-direction: row;
+		justify-content: space-around;
+				align-items: center;
+		nav{
+			ul{
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: center;
+				li{
+					a{
+						&:hover::before{
+							left: 400px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 1080px){
+	header{
+		nav{
+			ul{
+				li{
+					flex-basis: 33.33%;
+					a{
+						&:hover::before{
+							left: 550px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

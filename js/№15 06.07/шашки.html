@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Шашки</title>
+</head>
+<body>
+	<div id="parent" style="width: 800px;height: 800px;position: absolute;top: 0;left: 0;border: 1px solid #000;"></div>
+	<script>
+		var parent = document.getElementById("parent");
+		var divs = "";
+		var n = 0;
+		var divsRed = divsBlue = "";
+		var peremision = false;
+		var currentEl,dX,dY,hod = false;
+
+		for(var i = 0; i < 8; i++){
+			for(var j = 0; j < 8; j++){
+				n++;
+				divs += "<div id = 'd" + n + "'style = 'width: 100px;height: 100px; border: 1px solid black; position: absolute; top:" + i * 100 + "px; left:" + j * 100 + "px;'></div>";
+			}
+		}
+
+		parent.innerHTML = divs;
+		n = 0;
+
+		for(var i = 0; i < 8; i++){
+			for(var j = 0; j < 8; j++){
+				n++;
+				if ((n % 2 == 0 && i % 2 != 0) || (n % 2 != 0 && i % 2 == 0) ){
+					document.getElementById("d" + n).style.background = "black";
+				}
+			}
+		}
+
+		n = 0;
+
+		for(var i = 0; i < 3; i++){
+			for(var j = 0; j < 4; j++){
+				n++;
+				divsRed += "<div id = 'r" + n + "' style ='width: 100px; height: 100px; position: absolute; border-radius: 50%; background: red;'></div>";
+				divsBlue += "<div id = 'b" + n + "' style ='width: 100px; height: 100px; position: absolute; border-radius: 50%; background: blue;'></div>";
+			}
+		}
+		parent.innerHTML += divsRed += divsBlue;
+		n = 0;
+
+		for(var i = 0; i < 3; i++){
+			for(var j = 0; j < 8; j++){
+
+				if(i == 0 && j % 2 == 0){
+					n++; 	
+					document.getElementById("r" + n).style.left = j * 100 + "px";
+					document.getElementById("r" + n).style.top = "0px";
+				}
+
+				if(i == 1 && j % 2 != 0){
+					n++; 	
+					document.getElementById("r" + n).style.left = j * 100 + "px";
+					document.getElementById("r" + n).style.top = "100px";
+				}
+
+				if(i == 2 && j % 2 == 0){
+					n++; 	
+					document.getElementById("r" + n).style.left = j * 100 + "px";
+					document.getElementById("r" + n).style.top = "200px";
+				}
+
+			}
+		}
+
+		n = 0;
+		for(var i = 0; i < 5; i++){
+			for(var j = 0; j < 8; j++){
+
+				if(i == 0 && j % 2 != 0){
+					n++; 	
+					document.getElementById("b" + n).style.left = j * 100 + "px";
+					document.getElementById("b" + n).style.top = "500px";
+				}
+
+				if(i == 1 && j % 2 == 0){
+					n++; 	
+					document.getElementById("b" + n).style.left = j * 100 + "px";
+					document.getElementById("b" + n).style.top = "600px";
+				}
+
+				if(i == 2 && j % 2 != 0){
+					n++; 	
+					document.getElementById("b" + n).style.left = j * 100 + "px";
+					document.getElementById("b" + n).style.top = "700px";
+				}
+				
+			}
+		}
+
+		function down() {
+			if(event.srcElement.id.substr(0,1) == "r" && hod == false){
+				peremision = true;
+				dX = event.offsetX;
+				dY = event.offsetY;
+				currentEl = event.srcElement;
+				if(event.button == 2 && hod == false){
+					hod = false
+				}else{
+				hod = true;
+				}
+			}
+
+			if(event.srcElement.id.substr(0,1) == "b" && hod == true){
+				peremision = true;
+				dX = event.offsetX;
+				dY = event.offsetY;
+				currentEl = event.srcElement;
+				if(event.button == 2 && hod == true){
+					hod = true;
+				}else{
+				hod = false;
+				}
+			}
+		}
+
+		function moveEl() {
+			if(peremision){
+				currentEl.style.left = (event.clientX - dX) + "px";
+				currentEl.style.top = (event.clientY - dY) + "px";
+			}
+		}
+		document.onmousedown = down;
+		document.onmouseup = function () {peremision = false;};
+		document.onmousemove = moveEl;
+		document.oncontextmenu = function () {return false;}
+	</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+line-height: 1.2em(за замовчуваням)
+letter-spacing міжбуквений простір(за замовчуваням 0)Трекінг
+word-spacing інтервал між словами
+white-space: nowrap, pre, pre-line, pre-wrap між інтервальний простір
+узагальнювальна властивість 
+sytle="font:
+			1.f-style
+			2.f-varianl
+			3.f-weight
+			4.f-size(обов'язково)f-size і line-heigh розділяється слешом /
+			5.line-heigh
+			6.f-family(обов'язково)"
+
+list-style-position: inside   обтікання тексту

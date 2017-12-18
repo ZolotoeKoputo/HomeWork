@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style> 
+	*{
+		margin: 0;
+	}
+#progress{ 
+background: url(1.jpg) center center repeat-x; 
+height: 600px; 
+width: 100%; 
+} 
+img{
+	height: 300px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+</style> 
+</head>
+<body>
+	<div id = "progress"> </div> 
+<output></output> 
+<script> 
+
+var elem = document.getElementById ("progress"); 
+var temp = 1400; 
+var j = 2;
+
+function f () { 
+	temp -= j; 
+	elem.style.backgroundPosition = temp + "px"; 
+} 
+
+setInterval (f, 10); 
+</script>
+</body>
+</html>

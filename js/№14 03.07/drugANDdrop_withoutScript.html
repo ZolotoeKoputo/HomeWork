@@ -1,0 +1,54 @@
+<html>
+<head>
+
+<title>Untitled Document</title>
+<script>
+var permition=false;
+var elem;
+var ofX, ofY, n = 0;
+function moveEl()
+	{
+
+			if(permition)
+				{
+					elem.style.left = (event.clientX - ofX) + "px";
+					elem.style.top = (event.clientY - ofY) + "px";
+					elem.style.zIndex = n++;
+				
+				}
+			
+			
+	}
+
+function down()
+	{
+				if(event.srcElement.id.substr(0,4) == "rect"){
+					permition=true;
+					elem = event.srcElement;
+					ofX = event.offsetX;
+					ofY = event.offsetY;
+				}
+
+	}
+
+function up()
+	{
+				permition=false;
+	}
+document.onmousedown=down;
+document.onmouseup=up;
+document.onmousemove=moveEl;
+</script>
+</head>
+
+<body>
+<div id="rect1"  style="background:red; border-radius: 50%; width:50px; height:50px; position:absolute; left:20px; top:20px">&nbsp;</div>
+<div id="rect2" style="background:yellow; border-radius: 50%; width:50px; height:50px; position:absolute; left:20px; top:20px"> &nbsp;</div>
+<div id="rect3" style="background:blue; border-radius: 50%; width:50px; height:50px; position:absolute; left:20px; top:20px"> &nbsp;</div>
+<div id="rect4" style="background:green; border-radius: 50%; width:50px; height:50px; position:absolute; left:20px; top:20px"> &nbsp;</div>
+<div id="rect5" style="background:black; border-radius: 50%; width:50px; height:50px; position:absolute; left:20px; top:20px"> &nbsp;</div>
+<div id="rect6" style="background:orange; border-radius: 50%; width:50px; height:50px; position:absolute; left:20px; top:20px"> &nbsp;</div>
+<div id="rect7" style="background:gray; border-radius: 50%; width:50px; height:50px; position:absolute; left:20px; top:20px"> &nbsp;</div>
+
+</body>
+</html>

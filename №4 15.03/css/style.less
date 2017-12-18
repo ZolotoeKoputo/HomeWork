@@ -1,0 +1,331 @@
+*{
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+.preloader{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 2;
+	transition: 1s all;
+	opacity: 1;
+	visibility: visible;
+	.loader{
+		width: 75px;
+		height: 75px;
+		border: 10px solid white;
+		border-radius: 50%;
+		border-top-color: blue;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		animation: 1s spin infinite linear;
+		&.done{
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+@keyframes spin{
+	from{
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to{
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+/*=========================================================================*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+body{
+		font-family: 'Roboto', sans-serif;
+		background: url(../img/bac.png);
+		color: #fff;
+
+		transition:.5s;
+}
+@bacg-color:  #0071c5;
+@hover-color: #013E6B;
+/*====================================================== main ====================================================*/
+.main{ 
+	.dl{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.header{
+		
+		background: @bacg-color;
+		color: #fff;
+		align-items: center;
+		.main-header{
+
+			padding-right: 150px;
+		}
+		h1{
+			flex: 1 1;
+			text-align: center;
+			margin: 0 25px;
+			flex-wrap: wrap;
+		}
+
+		.images{
+					flex-basis: 150px;
+					text-align: center;
+				img{
+					/*margin: 5px 0 0 0;*/
+			}
+			.intel-home{
+				margin: 10px 0 10px 0;
+			}
+			.home{
+				img{
+					transition: 1s;
+					padding: 4px 0 0 0;
+					&:hover{
+						opacity: 0.7;
+					}
+				}
+			}
+			
+		}
+	}
+/*========================================================== menu ==================================================*/
+	.menu{
+		border-top: 1px solid @hover-color; 
+		background: @bacg-color;
+		align-content: flex-start;
+		padding: 10px;
+		a{
+			padding: 10px;
+			color: #fff;
+			text-decoration: none;
+			font-weight: bold;
+			transition: 0.3s;
+			&:hover{
+				background: @hover-color;
+				transition: 0.3s;
+			}
+		}
+	}
+	/*================================================= text ===========================================*/
+		.text{
+			background-color: rgba(0, 0, 0, 0.3);
+			h2{
+				padding: 10px 15px;
+				text-align: center;
+				font-size: 25px;
+			}
+			p{
+				text-align: justify;
+				text-indent: 1.5em;
+				padding: 10px 15px;
+				color: #fff;
+				font-size: 18px;
+			}
+			img{
+				display: flex;
+				padding: 10px;
+				max-width: 100%;
+			}
+		}
+/*=================================================== sidbar ===============================================*/
+	.sidbar{
+		    box-shadow: 0 5px 15px 0 #013e6b;
+		color: #fff;
+		border-top: 1px solid @hover-color;
+		background: @bacg-color;
+			.pr{
+				flex-basis: 300px;
+			}
+			del {
+					cursor: not-allowed;
+					background: @hover-color;
+					color: #000;
+					padding: 10px;
+				
+			}
+		h2{
+			margin: 10px 5px;
+			text-align: center;
+			padding-bottom: 15px;
+			padding-top: 5px;
+		}
+		ul{
+			margin: 0 0 10px 35px;
+			
+		}
+		li{
+			padding-top: 5px;
+			padding-bottom: 10px;
+			list-style:  none;
+			a{
+				color: #fff;
+				text-decoration: none;
+				padding: 10px;
+				transition: 0.3s;
+					&:hover{
+						background: @hover-color;
+						transition: 0.3s;
+				}
+			}
+		}
+	}
+
+/*===================================================== content ===========================================*/
+	.content{
+		background-color: rgba(0, 0, 0, 0.3);
+		p{		
+			flex-basis: 100%;
+			text-align: justify;
+			border-bottom: 1px solid @hover-color;
+				text-indent: 1.5em;
+				padding: 15px;
+				color: #fff;
+				font-size: 18px; 
+		}
+	}
+	/*================================================= footer ============================================*/
+	footer{
+	display: flex;
+	flex-wrap: wrap;
+	height: 200px;
+	width: 100%;
+	background: #fff;
+	color: #000;
+	font-weight: bold;
+	img{
+		height: 64px;
+		margin: auto;
+		padding: 10px;
+	}
+	h5{
+		margin: auto;
+	}
+	p{
+		padding: 5px;
+		margin: auto;
+	}
+		
+
+		#scrollup {
+			position: fixed; /* фиксированная позиция */
+			opacity: 0.8; /* прозрачность */
+			padding: 5px 5px 2px 5px; /* отступы */
+			background: @bacg-color;
+			border-radius: 5px; /* скругление углов */
+			right:  10px; /* отступ слева */
+			bottom: 10px; /* отступ снизу */
+			display: none; /* спрятать блок */
+			cursor: pointer;
+			img{
+				padding: 0;
+			}
+		}
+	}
+}
+/*========================================================== media ===========================================*/
+@media screen and (max-width: 745px ){
+		#scrollup{
+			display: none!important;
+		}
+}
+@media (min-width: 745px) and (max-width: 1217px){
+	.main{
+		.sidbar{
+			.pr{
+				flex-basis: 50%;
+				text-align: center;
+				li{
+					padding-right: 50px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 618px) {
+   .main{
+   	.sidbar{
+   		h2{
+   			flex-basis: 100%;
+   		}
+   		.pr{
+   			ul{
+   				padding: 0 0 10px 0;
+   				margin: 0;
+   			}
+   			flex-basis: 250px;
+   			li{
+   			text-align: center;
+				a{
+					flex-basis: 100%;
+
+				}
+   			}
+   		}
+   	}
+   	.header{
+   			.main-header{
+   				
+	   				padding-right: 0;
+   				
+   			}
+   			.images{
+   				.intel{
+   					display: none;
+   				}
+
+   				.home{
+   					display: block;
+   					img{
+   						margin-bottom: 10px;
+   					}
+   				}
+   			}
+   			h1{
+	   			flex-basis: 100%;
+	   			padding-right: 0;
+	   			padding: 10px 0 ;
+   			}
+   		}
+   }
+}
+@media (min-width: 400px ) and (max-width: 516px){
+	.main{
+		.menu{
+			.sidbar{
+				h2{
+				font-size: 20px;
+				}
+			}
+			flex-direction: column;
+			a{
+				margin: 0;
+				text-align: center;
+			}
+		}
+	}
+	.sidbar{
+		h2{
+			width: 350px;
+			}
+	}
+}
+@media screen and (max-width: 400px){
+	.main{
+		.menu{
+			flex-direction: column;
+			a{
+				margin: 0;
+				text-align: center;
+			}
+		}
+	}
+}
+@media screen and (max-width: 310px){
+	footer{
+		flex-direction: column;
+	}	
+}

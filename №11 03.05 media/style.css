@@ -1,0 +1,12 @@
+body::after{
+	content: "Mobile version";
+	position: fixed;
+	bottom: 60px;
+	left: 0;
+	font-size: 3em;
+	text-align: center;
+	color: #fff;
+	padding: 10px;
+	background: hsla(60, 50%, 50%, 0.7);
+	width: 100%;
+}

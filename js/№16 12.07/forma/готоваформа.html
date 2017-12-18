@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>форма</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+</head>
+<body>
+	<div class="wrapper">
+		<form action="" class="forma" id="f" name="forma">
+			<h1>Регістрація</h1>
+			<input type="text" id="l" name="login"  placeholder="Введіть логін:"><i class="fa fa-user-o" aria-hidden="true"></i>
+			<span class="error"></span>
+			<input type="email" name="email" placeholder="Введіть email:"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+			<span class="error"></span>
+			<input type="password" name="pass" placeholder="Введіть пароль:"><i class="fa fa-unlock-alt" aria-hidden="true"></i>
+			<input type="password" name="pass2" placeholder="Підтвердіть ваш пароль:"><i class="fa fa-unlock" aria-hidden="true"></i>
+			<span class="error-pass"></span>
+			<fieldset>
+				<legend>Виберіть стать</legend>
+					<input type="radio" id="r1" name="sex" value="Чоловік" />
+	            		<label for="r1"><span></span>Чоловік</label>
+	            	<input type="radio" id="r2" name="sex" value="Жінка" />
+	            		<label for="r2"><span></span>Жінка</label>
+	            	<input type="radio" id="r3" name="sex" value="Не визначений" checked />
+	            		<label for="r3"><span></span>Не визначений</label>
+			</fieldset>
+			<textarea name="aboutme" cols="20" rows="5"></textarea>
+			<select name="car" id="" size="4" multiple>
+					<option value="bmv">BMV</option>
+					<option value="volkswagen">Volkswagen</option>
+					<option value="bugatti" selected>Bugatti</option>
+					<option value="mercedes">Mercedes</option>
+					<option value="audi">Audi</option>
+					<option value="lexus">Lexus</option>
+					<option value="porsche">Porsche</option>
+			</select>
+			<ul class="ul1">
+				<li>Англійська
+					<div class="onoffswitch">
+					    <input type="checkbox" name="en" value="en" class="onoffswitch-checkbox" id="en" checked>
+					    <label class="onoffswitch-label" for="en"></label>
+					</div>
+				</li>
+				<li>Російська
+					<div class="onoffswitch">
+					    <input type="checkbox" name="ru" value="ru" class="onoffswitch-checkbox" id="ru" >
+					    <label class="onoffswitch-label" for="ru"></label>
+					</div>
+				</li>
+			</ul>
+			<ul class="ul2">
+				<li>Німецька
+					<div class="onoffswitch">
+					    <input type="checkbox" name="de" value="de" class="onoffswitch-checkbox" id="de">
+					    <label class="onoffswitch-label" for="de"></label>
+					</div>
+				</li>
+				<li>Французька
+					<div class="onoffswitch">
+					    <input type="checkbox" name="fr" value="fr" class="onoffswitch-checkbox" id="fr">
+					    <label class="onoffswitch-label" for="fr"></label>
+					</div>
+				</li>
+			</ul>
+					<!-- <input type="file" accept="image/*" multiple><br> -->
+					<input type="button" value="Button"><br>
+		       		<input type="reset"><br>
+		            <!-- <input type="submit"><br> -->
+		            <!-- <input type="image" alt="Фото" src="submit.png"><br> -->
+		</form>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

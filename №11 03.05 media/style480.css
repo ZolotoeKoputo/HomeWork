@@ -1,0 +1,4 @@
+body::after{
+		content: "Brakpoint from 480px to 767px";
+		background: hsla(140, 50%, 50%, 0.7);
+	}

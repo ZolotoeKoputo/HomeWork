@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<style>
+		.first{
+			color: red;
+		}
+	</style>
+</head>
+<body data-user-login = "admin" class="page home">
+word
+<p class="paragraph" id="txt" title="!!!" align="center">12313</p><!-- comments -->
+<a href="./pages/.contact.html">link</a>
+<input type="checkbox" >
+	<ul>
+		<li class="season">Зима
+			<ol>
+				<li id="month">Грудень</li>
+				<li>Січень</li>
+				<li>Лютий</li>
+			</ol>
+		</li>
+		<li class="season">Весна
+			<ol>
+				<li>Березень</li>
+				<li>Квітень</li>
+				<li>Травень</li>
+			</ol>
+		</li>
+		<li class="season">Літо
+			<ol>
+				<li>Червень</li>
+				<li>Липень</li>
+				<li>Січень</li>
+			</ol>
+		</li>
+		<li class="season">Осінь
+			<ol>
+				<li>Вересень</li>
+				<li>Жовтень</li>
+				<li>Листопад</li>
+			</ol>
+		</li>
+	</ul>
+	<input type="button" value="toggle">
+	<script>
+	// prevsiousSibling, nextSibling, firstChild, lastChild, childNodes[0], parentNode, prevsiousElementSibling, parentElement, nextElementSibling, children[0]...
+		// var elem = document.getElementById("month");
+		// elem.parentNode.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.childNodes[1].childNodes[3].style.color = "red";
+		// elem.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[0].children[1].style.color = "red";
+		
+		// document.documentElement
+		// document.head
+		// document.body
+		// table.rows[0]
+		// table.rows[0].cells[0]
+		// document.getElementsByName(elementName: DOMString)
+		// document.getElementsByTagName(localName: DOMString)
+		// document.getElementsByClassName(classNames: DOMString)
+		
+		// var elems = document.querySelectorAll("ul>li>ol>li");
+		// for(var i = 0; i < elems.length; i++){
+		// 	elems[i].style.color = "red";
+		// }
+		// elems.matches("ccs selector")
+		
+		// var elems = document.body.children[0].children[0].children[0].children[0];
+		// for(var i = 0; i < elems.length; i++){
+		// 	if(elems[i].matches("#month")){
+		// 		alert(elems[i].textContent);
+		// 	}
+		// }
+		
+		// elem = document.querySelector("#month");
+		// console.log(elem.closest('.season').innerHTML);
+
+		// alert(document.body.childNodes[1].nodeType);
+		// alert(document.body.childNodes[2].nodeName);
+		// alert(document.body.childNodes[1].tagName);
+		// nodeValue, data
+
+		// document.body.childNodes[2].nodeValue = "121312";
+		// if(document.body.children[0].hasAttribute("align")){
+		// 	// document.body.children[0].setAttribute("align", "right");
+		// 	// alert(document.body.children[0].getAttribute("align"));
+		// 	document.body.children[0].removeAttribute("align");
+		// }
+		// var attrs = document.body.children[0].attributes;
+		// for(var i = 0; i < attrs.length; i++){
+		// 	alert(attrs[i].name + ":" + attrs[i].value);
+		// }
+
+		// alert(document.body.className);
+		// alert(document.body.classList.contains('home'));
+		// document.body.classList.add('first');
+		// document.body.classList.remove('page');
+		// document.querySelector("input[type=button]").onclick = function () {
+		// 	document.body.classList.toggle("first");
+		// }
+		// alert(document.body.getAttribute("data-user"));
+		// alert(document.body.dataset.userLogin);
+
+		// alert(document.querySelector("a").getAttribute("href"));
+		// alert(document.querySelector("a").href);
+		// alert(document.querySelector("input").checked = true);
+		// document.querySelector("a").hidden = true;
+		var li =  document.createElement("li");
+		var text =  document.createTextNode("TEXT NODE");
+		li.appendChild(text);
+		// document.querySelector("ul").appendChild(li);
+		document.querySelector("ul").insertBefore(li, null);
+		// document.querySelector("ul").removeChild(document.querySelector("ul").lastElementChild);
+		// document.querySelector("ul").replaceChild(li, document.querySelector("ul").lastElementChild);
+		document.querySelector("ul").lastElementChild.remove();
+		var ul = document.querySelector("ul");
+		var elem = ul.lastElementChild;
+		// elem.insertAdjacentHTML("afterEnd", "<li>4</li><li>5</li>");
+		// elem.insertAdjacentText("beforeEnd", "Text");
+		elem.insertAdjacentElement("beforeBegin", li);
+		// коліри поміняти створити табилицю і по діагоналі поміняти колір, дві кнопкі
+		// table.rows[]
+		// table.sells[]
+	</script>
+</body>
+</html>

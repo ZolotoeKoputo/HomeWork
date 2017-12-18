@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>анімація строки</title>
+	<style>
+		#elem{
+			background: white;
+			font: 14pt tahoma;
+			text-align: center;
+			padding: 20px;
+		}
+		body{
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div id="div" style="">Ви на сайті <span id="sec">0</span> сек</div> -->
+	<div id="elem"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+	<script>
+	var spanRed = "<span style = 'color: #ff0000';>";
+	var spanRase = "<span style = 'color: #FF7256';>";
+	var spanEnd = "</span>";
+	var substrLeft, charLeft, charC, charRight, substrRight;
+	var i = 0;
+	var elem = document.getElementById("elem");
+	var content = elem.textContent;
+	var j = 1;
+	function f() {
+		substrLeft = content.substring(0, i-1);
+		charLeft = content.charAt(i-1);
+		charC = content.charAt(i);
+		charRight = content.charAt(i+1);
+		substrRight = content.substring(i+2);
+		i+=j;
+		charLeft = spanRase + charLeft + spanEnd;
+		charC = spanRed + charC + spanEnd;
+		charRight = spanRase + charRight + spanEnd;
+		elem.innerHTML = substrLeft + charLeft + charC + charRight + substrRight;
+		if(i > content.length + 2 || i < -3){
+			j = -j;
+		}
+	}
+	setInterval(f, 50);
+
+
+		// var content = document.querySelector("#div").textContent;
+		// var content = document.getElementById("div").innerHTML; //виводить внутрений html
+		// var content = document.getElementById("div").outerHTML; //виводить весь html
+		// var elem = document.getElementById("div");
+		// elem.innerHTML += " Нове <br> повідомленя";
+		// elem.style.color = "red";
+		// elem.style.fontFamily = "tahoma";
+		// var res = elem.style.color;
+		// var style = getComputedStyle(elem);
+		// alert(style.border);
+
+		// var elem = document.getElementById("sec");
+		// var count = 1;
+		// function f() {
+		// 	elem.textContent = count++;
+		// 	if(count > 10){
+		// 		clearInterval(a);
+		// 	}
+		// 	if(count > 5){
+		// 		elem.style.color = "green";
+		// 	}
+		// }
+		// var a = setInterval(f, 1000);
+
+	</script>
+</body>
+</html>

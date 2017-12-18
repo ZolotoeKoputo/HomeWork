@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>домаха по функціям</title>
+</head>
+<body>
+	<script>
+		var str = prompt("Введіть будь-які слова:", "слово1 слово2 слово3 слово4 слово5");
+		var arr = str.split(" ");
+		function f(...res) {
+			document.write("<ul>");
+			for(var i = 0; i < res.length; i++){
+				document.write("<li>" + res[i] + "</li>");
+			}
+			document.write("</ul>");
+		}
+		f(...arr);
+	</script>
+</body>
+</html>

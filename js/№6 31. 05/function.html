@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src = "function.js"></script>
+</head>
+<body>
+	<script>
+		// function f(x, y, z){
+		// 	var maxx = x;
+		// 	if(y > maxx){maxx = y;}
+		// 	if(z > maxx){maxx = z;}
+		// 	return maxx;
+		// }
+		// var a = parseInt(prompt("First number", 5));
+		// var b = parseInt(prompt("Second number", 3));
+		// var c = parseInt(prompt("Last number", 7));
+		// document.write(f(a,b,c));
+
+		
+			// var count = prompt("скільки таблиць", 2);
+			var tr = parseInt(prompt("скільки рядків?", "10"));
+			var td = parseInt(prompt("скільки стовпців?", "10"));
+
+			function howMonyTables() {
+				// for (var i = 0; i < j; i++) {
+					document.write(createTable(tr, td));
+				// }
+
+			}
+			howMonyTables();
+	</script>
+	<!-- <input type="button" value="OK" onclick="f()"> -->
+</body>
+</html>

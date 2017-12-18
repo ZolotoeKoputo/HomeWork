@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Підказка</title>
+	<style>
+		#hint{
+			width: 500px;
+			height: 200px;
+			background: #000;
+			color: #fff;
+			border: 1px solid #0D12EC;
+			border-radius: 15px;
+			box-shadow: 0 0 10px 1px #270BFD;
+			text-align: center;
+			position: absolute;
+			display: none;
+			justify-content: center;
+			align-items: center;
+		}
+		p{
+			font-size: 40px;
+		}
+	/*	#close{
+			position: relative;
+			padding: 15px;
+			top: -85px;
+			left: 295px;
+		}
+		#close::before, #close::after{
+			content: "";
+			position: absolute;
+			width: 25px;
+			height: 3px;
+			background:  #fff;
+		}
+		#close::before{
+			transform: rotate(40deg);
+		}
+		#close::after{
+			transform: rotate(-40deg);
+		}*/
+	</style>
+</head>
+<body>
+	<div id="hint">
+		<a href="#" id="close"></a>
+		<p>Підказка</p>
+	</div>
+	<script>
+		var hint = document.getElementById("hint");
+		var close = document.getElementById("close");
+		var coordX = coordY = 0;
+		var X = window.innerWidth/2;
+		var Y = window.innerHeight/2;
+		// var hintStyle = window.getComputedStyle(hint, null).getPropertyValue("width");
+
+		// var hintWidth = parseInt(hint.style.width);
+		// var hintHeight = parseInt(hint.style.height);
+	
+		document.onmousedown = function () {
+			coordX = event.clientX;
+			coordY = event.clientY;
+
+			function divHint() {
+				hint.style.display = "flex";
+
+				if(coordX < X && coordY < Y){
+					hint.style.top = coordY + "px";
+					hint.style.left = coordX + "px";
+				}
+				if(coordX > X && coordY < Y){
+					hint.style.top = coordY + "px";
+					hint.style.left =  coordX - 501  + "px";
+				}
+				if(coordX < X && coordY > Y){
+					hint.style.top = coordY - 201 + "px";
+					hint.style.left =  coordX + "px";
+				}
+				if(coordX > X && coordY > Y){
+					hint.style.top = coordY - 201 + "px";
+					hint.style.left =  coordX - 501 + "px";
+				}
+			}
+			divHint();
+		}
+		
+		// close.onclick = function () {
+		// 	hint.style.display = "none";
+		// }
+	</script>
+</body>
+</html>

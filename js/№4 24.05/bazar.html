@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var summa, // кошильок
+			pay,	// потраченно
+			report = 0;
+
+		do{
+			summa = parseInt(prompt("Скільки грошей", 100));
+		}
+		while(isNaN(summa));
+
+		for(var bool = true; bool;){
+			pay = parseInt(prompt("Скільки хочите потратити", 25));
+
+			if(pay > summa){
+				alert("У вас недостатньо коштів для покупки!");
+			}
+			if(pay <= summa){
+				summa -= pay;
+				report += pay;
+				if(summa == 0){
+					alert("У вас закінчилися гроші");break;
+				}
+					bool = confirm("У вас залишилося " + summa + " грн\n Продовжити?");
+			}
+					if(bool == false || isNaN(pay)){
+						alert("Ви потратили " + report + " грн");break;
+					}
+		}
+	</script>
+</body>
+</html>

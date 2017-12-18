@@ -1,0 +1,27 @@
+body{
+	font-family: 'Roboto', sans-serif;
+}
+p{
+	font-size: 14px;
+}
+span{
+	color: blue;
+	text-decoration: underline;
+}
+dt{
+	font-weight: bold;
+}
+.one{
+	list-style: upper-roman;
+}
+.two{
+	list-style: upper-alpha;
+}
+.three{
+	list-style: lower-alpha;
+}
+.upper{
+	text-transform: uppercase;
+	color: black;
+	text-decoration: none;
+}

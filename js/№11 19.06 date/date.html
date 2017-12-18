@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date Time</title>
+</head>
+<body>
+	<script>
+		// var now = new Date();
+
+		// Metod obj Date
+		// var date = now.getDate(); /*число*/
+		// var date = now.getDay(); /*день тижня*/
+		// var date = now.getFullYear(); /*повна версія року*/
+		// var date = now.getMonth(); /*місяць*/
+		// var date = now.getHours(); /*години*/
+		// var date = now.getUTCHours(); /*години*/
+		// var date = now.getMinutes(); /*хвилини*/
+		// var date = now.getSeconds(); /*сек*/
+		// var date = now.getMilliseconds(); /*мл сек*/
+		// var date = now.getTime(); /*мл сек з 71 року*/
+		// var date = now.getTimezoneOffset(); /*мл сек з 71 року*/
+		// alert(date);
+
+
+		// var now = new Date(1999, 3, 1);
+		// alert(now.getHours());
+
+		// var now = new Date("Jun 19, 2017 19:30:00");
+		// alert(now);
+
+		var now = new Date();
+		now.setFullYear(2017);
+		now.setMonth(2,5);
+		now.setDate(19);
+		now.setHours(19,30,15,500);
+		now.setMinutes(30,15,500);
+		now.setSeconds(15,500);
+		now.setMilliseconds(500);
+		alert(now);
+	</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+	body>*>*,footer>*{
+		position:absolute;
+		border: 1px solid #f00;
+	}
+	main p::first-letter{
+		font-size: 300%;
+		color: red;
+	}
+	main p::first-line{
+		font-weight: bold;
+	}
+	main p::selection{
+		background: brown;
+		color: white;
+	}
+
+	blockquote::before{
+		content: open-quote;
+		font: 24pt verdana;
+		color: #fff;
+		float: left;
+		background: grey;
+		border-radius: 50%;
+		text-align: center;
+		width: 26pt;
+		height: 25pt;
+		line-height: 1.6em;
+		display: inline-block;
+		position: relative;
+		left: -10px;
+	}
+	blockquote::after{
+		content: close-quote;
+		font: 24pt verdana;
+		float: right;
+		color: #fff;
+		background: grey;
+		border-radius: 50%;
+		text-align: center;
+		width: 26pt;
+		height: 25pt;
+		line-height: 1.6em;
+		display: inline-block;
+		position: relative;
+		left: 10px;
+	}
+	#wrapper {
+		width:960px;
+		height: 940px;
+		border:1px solid red;
+		margin:0 auto;
+		position:relative;
+	}
+	
+	header{
+		opacity: 0.5;
+		background: #FF0101;
+		z-index: 2;
+		width:960px;
+		height:170px;
+		position: sticky;
+		top: 0;
+	}
+	
+	nav{
+		width:200px;
+		height:400px;
+		top:180px;
+		left:0;		
+	}
+	
+	main{
+		width:540px;
+		height:600px;
+		top:180px;
+		left: 210px;	
+		overflow: auto;
+	}
+	
+	aside{
+		width:200px;
+		height:400px;
+		top:180px;
+		left:760px;			
+	}
+	
+	footer{
+		width:960px;
+		height:150px;
+		top:790px;
+		left:0;			
+	}
+
+	footer div{
+		background:red;
+		width:20px;
+		height:20px;
+	}
+	footer div:nth-child(1){
+		top:0;
+		left:0;
+	}
+	footer div:nth-child(2){
+		top:0;
+		right:0;
+	}
+	footer div:nth-child(3){
+		bottom:0;
+		left:0;
+	}
+	footer div:nth-child(4){
+		bottom:0;
+		right:0;
+	}
+	p{
+		font-family: "poiret_oneregular";
+	}

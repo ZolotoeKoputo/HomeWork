@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Digital Clock</title>
+</head>
+<body style="background:#000000;">
+<script>
+var imageSrc = new Array (10);
+imageSrc[0] = "./images/c0.gif";
+imageSrc[1] = "./images/c1.gif";
+imageSrc[2] = "./images/c2.gif";
+imageSrc[3] = "./images/c3.gif";
+imageSrc[4] = "./images/c4.gif";
+imageSrc[5] = "./images/c5.gif";
+imageSrc[6] = "./images/c6.gif";
+imageSrc[7] = "./images/c7.gif";
+imageSrc[8] = "./images/c8.gif";
+imageSrc[9] = "./images/c9.gif";
+
+var imagesColon = new Array (2);
+imagesColon[0] = "./images/colon.gif";
+imagesColon[1] = "./images/colon2.gif";
+
+function f() {
+	var clock = new Date(),
+		hours = clock.getHours(),
+		minutes = clock.getMinutes(),
+		seconds = clock.getSeconds(),
+		hoursLeft = Math.floor(hours/10),
+		hoursRight = hours % 10,
+		minutesLeft = Math.floor(minutes/10),
+		minutesRight = minutes % 10,
+		secondsLeft = Math.floor(seconds/10),
+		secondsRight = seconds % 10,
+		milliseconds = clock.getMilliseconds(),
+		flag = true;
+
+	if(hours > 12){
+	 hours = hours - 12;
+	 hoursLeft = Math.floor(hours/10);
+	 hoursRight = hours % 10;
+
+	 document.images.am.src = "./images/cpm.gif";
+	}else{
+		document.images.am.src = "./images/cam.gif";
+	}
+
+	document.images.a.src = imageSrc[hoursLeft];
+	document.images.b.src = imageSrc[hoursRight];
+
+	document.images.d.src = imageSrc[minutesLeft];
+	document.images.e.src = imageSrc[minutesRight];
+
+	document.images.g.src = imageSrc[secondsLeft];
+	document.images.h.src = imageSrc[secondsRight];
+
+
+		function colon() {
+			if(flag){
+					document.images.col.src = "./images/colon.gif";
+					document.images.col2.src = "./images/colon.gif";
+					flag = false;
+				}else{
+					document.images.col.src =	"./images/colon2.gif";
+					document.images.col2.src =	"./images/colon2.gif";
+					flag = true;
+				}
+		}
+	setInterval(colon, 500);
+}
+setInterval(f,1000);
+</script>
+<div style="border:2px solid #FFFFFF; width:140px; padding:5px;"><img src="./images/cam.gif" name="am" /><img src="./images/cb.gif" name="a" /><img src="./images/cb.gif" name="b" /><img src="./images/colon.gif" name="col" /><img src="./images/cb.gif" name="d" /><img src="./images/cb.gif" name="e" /><img src="./images/colon.gif" name="col2" /><img src="./images/cb.gif" name="g" /><img src="./images/cb.gif" name="h" /></div>
+</body>
+</html>

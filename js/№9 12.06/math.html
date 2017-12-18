@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Математичні вирази</title>
+</head>
+<body>
+	<script>
+		// alert(Math.PI);
+		// alert(Math.SQRT2);
+		// alert(Math.SQRT1_2);
+		// alert(Math.E);
+		// alert(Math.LN2);
+		// alert(Math.LN10);
+		// alert(Math.LOG2E);
+		// alert(Math.LOG10E);
+		// alert(Math.random() *10);
+		// alert(Math.round(0.5));
+		// alert(Math.ceil(0.1));
+		// alert(Math.floor(0.9));
+		// alert(Math.abs(-10));
+		// alert(Math.sqrt(12));
+		// alert(Math.log(5));
+		// alert(Math.pow(2,1));
+		// alert(Math.exp(10));
+		// alert(Math.max(10, 4, 1));
+		// alert(Math.min(12,53,1,2));
+		// alert(Math.cos(32));
+		// alert(Math.tan(13));
+		// alert(Math.sin(64));
+		// alert(Math.acos(1));
+		// alert(Math.asin(1));
+		// alert(Math.atan(13));
+		// alert(Math.atan2(13, 44));
+
+
+		var a = prompt("Введіть число", 2.243232424324);
+		var b = prompt("Скільки чисел після коми залишити", 4);
+
+		function f(number, desimals) {
+				var res1 = number * Math.pow(10,desimals);
+				var res2 = Math.round(res1);
+				var res = res2 / Math.pow(10, desimals);
+		alert(res);
+		}
+		f(a,b);
+
+		
+	</script>
+</body>
+</html>

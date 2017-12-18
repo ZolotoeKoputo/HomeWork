@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slider</title>
+</head>
+<body>
+<div><img src="1.jpg" id="gallery"></div>
+<input type="button" id="prev" value="Prev">
+	<input type="button" id="one" value="1">
+	<input type="button" id="two" value="2">
+	<input type="button" id="tree" value="3">
+	<input type="button" id="next" value="Next">
+	<script>
+	var arr = ["1.jpg", "2.jpg", "3.jpg"];
+	var count = 0;
+	var photo = document.getElementById("gallery");
+	document.getElementById("prev").addEventListener("click", function () {
+		f("-");
+	});
+	document.getElementById("one").addEventListener("click", function () {
+		f(0);
+	});
+	document.getElementById("two").addEventListener("click", function () {
+		f(1);
+	});
+	document.getElementById("tree").addEventListener("click", function () {
+		f(2);
+	});
+	document.getElementById("next").addEventListener("click", function () {
+		f("+");
+	});
+		function f(n) {
+			switch(n){
+				case 0: photo.src = arr[n];count = 0;break;
+				case 1: photo.src = arr[n];count = 1;break;
+				case 2: photo.src = arr[n];count = 2;break;
+				case "+": count++;
+					if(count == arr.length){
+						count = 0;
+					};
+					photo.src = arr[count];break;
+				case "-": count--;
+					if(count < 0){
+						count = arr.length-1;
+					};
+				photo.src = arr[count];break;
+			}
+
+		}
+	</script>
+	
+</body>
+</html>

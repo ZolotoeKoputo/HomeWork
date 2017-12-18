@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>domaha3</title>
+</head>
+<body>
+	<div id="child" style=" 
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	background: red;
+	border-radius: 50%;
+ "></div>
+ <script>
+ 	var child = document.getElementById("child"),
+			centerX = centerY = 200,
+			speed = 10,
+			radius = 100,
+			startGradus = 0,
+			flag = true,
+			flag2 = true,
+			a = 0;
+
+			function f() {
+				a -= speed;
+				var rad = Math.PI / 180 * (a - startGradus);
+				child.style.top = Math.sin(rad) * radius + centerY + "px";
+				child.style.left = Math.cos(rad) * radius + centerX + "px";
+				if(a <= -320 && flag == true){
+					a = 0;
+					speed = -speed;
+					centerY = centerY + 140;
+					centerX = centerX + 140;
+					startGradus = 130;
+					flag = false;
+					// alert("1");
+				}
+				if(a >= 360 && flag == false){
+					a = 0; 
+					// speed = -speed;
+					startGradus = 225;
+					centerY = centerY - 140;
+					flag = true;
+					// alert("2");
+				}
+				if(a >= 360 && flag == true){
+					a = 0;
+					speed = -speed;
+					centerX = centerX - 140;
+					centerY = centerY + 140;
+					startGradus = 40;
+					flag = false;
+					flag2 = false;
+					// alert("3");
+				}
+				if(a <= -360 && flag == false && flag2 == false){
+					a = 0;
+					// centerX = centerX - 140;
+					centerY = centerY - 140;
+					startGradus = 320;
+					flag = true;
+					flag2 = true;
+					// alert("4");
+				}
+			}
+			setInterval(f,50);
+ </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>форми</title>
+</head>
+<body>
+	<form action="" name="forma" class="forma">
+		<!-- <input type="text" value="text" required> -->
+		<!-- readonly -->
+		<!-- onfocus = "this.value ='' " -->
+		<!-- disebled -->
+		<table>
+			<tr>
+				<th colspan="2">Регістрація</th>
+			</tr>
+			<tr>
+				<td>Логін:</td>
+				<td><input type="text" name="login" autofocus></td>
+			</tr>
+			<tr>
+				<td>Пароль:</td>
+				<td><input type="password" name="pass"></td>
+			</tr>
+			<tr>
+				<td>Підтвердіть парль:</td>
+				<td><input type="password" name="pass2"></td>
+			</tr>
+			<tr>
+				<td>Інформація про себе</td>
+				<td><textarea name="aboutme" id="" cols="30" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td>знання іноземних мов</td>
+				<td>
+					<input type="checkbox" checked  id= "en" value="en"><label for="en">Англійська</label> <br>
+					<input type="checkbox" id="ru" value="ru"><label for="ru">Російська</label> <br>
+					<input type="checkbox" id="de" value="de"><label for="de">Німецька</label> <br>
+					<input type="checkbox" id="fr" value="fr"><label for="fr">Французька</label> <br>
+				</td>
+			</tr>
+			<tr>
+				<td>Вкажіть стать</td>
+				<td>
+					<fieldset>
+					<legend>Зробити вибір</legend>
+						<input type="radio" name="sex" value="male">Чоловік <br>
+						<input type="radio" name="sex" value="female">Жінка <br>
+						<input type="radio" checked name="sex" value="undefined">Не визначений
+					</fieldset>
+				</td>
+			</tr>
+			<tr>
+				<td>Вибір автомобіля</td>
+				<td>
+					<select name="car" id="" size="3" multiple>
+						<option value="bmv">BMV</option>
+						<option value="golf">Golf</option>
+						<option value="bugatti" selected>Bugatti</option>
+						<option value="mersedes">Mersedes</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Кнопки</td>
+				<td>
+					<input type="file" accept="image/*" multiple><br>
+					<label>Кнопка без поведінки: <input type="button" value="Button"><br></label>
+		       		<label>Кнопка для очищення форми:<input type="reset"><br></label>
+		            <label>Кнопка для відправки форми:<input type="submit"><br></label>
+		            <label>Графічна кнопка відправить:<input type="image" alt="Фото" src="loginbutton.png"><br></label>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<form name="html5">
+        Колір: <input type="color" name="test">
+        <input type="button" value="Click" onclick="alert(test.value)"> <br>
+		<label> Поле для e-mail: <input type="email"><br><br></label>
+        <label> Поле для URL: <input type="url"><br><br></label>
+        <label>Поле для пошуку: <input type="search"><br><br></label>
+        <label> Поле для телефону: <input type="tel"><br>
+        Ввод дати без часу:   <input type="date"><br>
+            Ввод часу:  <input type="time"><br>
+            Ввод тижня: <input type="week"><br>
+            Ввод місяця:  <input type="month"><br>
+            Ввод дати з часом:    <input type="datetime"><br>
+            Контроль вводу дати:  <input type="datetime-local"><br>
+            Числове поле:<input type="number" value="10" step="2" min="0" max="20"><br>
+            Поле-діапазон: <input type="range" value="10" step="2" min="0" max="20"><br>
+            <input type="submit">
+	</form>
+</body>
+</html>

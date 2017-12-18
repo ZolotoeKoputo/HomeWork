@@ -1,0 +1,55 @@
+*{
+	margin: 0 auto;
+}
+.main{
+	margin: 0 20px; 
+	border: 1px solid #ccc;  
+	background: #fff; 
+	border-radius: 3px;
+}
+.dl{
+	padding: 5px 10px; 
+	border:1px solid #ddd; 
+	background: #fffde1; 
+	border-radius: 3px;
+
+}
+.header{
+	background: #FF0000;
+		flex-basis: 100%;
+	
+}
+.menu{
+	background: #3000FF;
+
+	flex-basis: 100%;
+}
+.sidbar{
+	background: #FF00F6;
+		flex-basis: 250px;
+
+}
+.content{
+	background: #00FFA8;
+	flex-basis: 100%;
+	flex: 1 1 ;
+}
+.footer1{
+	background: #66FF00;
+	flex-basis: 100%;
+}
+.footer2{
+	background: #FF0000;
+		flex-basis: 100%;
+}
+.main{
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: stretch;
+}
+.dl{
+	/*flex: 1 1 200px;*/
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Діапазон чисел</title>
+</head>
+<body>
+	<script>
+		var minX = parseInt(prompt("Мінімальний діапазон", 30 ));
+		var maxX = parseInt(prompt("Максимальний діапазон", 50 ));
+		function f (lowerBound, upperBound) {
+			for(var i = 0; i < 20; i++){
+				var randomize = (upperBound - lowerBound +1) * Math.random() + lowerBound;
+				var rez = Math.floor(randomize);
+				document.write(rez + "<br>");
+			}
+		}
+		f(minX, maxX);
+	</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sin</title>
+</head>
+<body>
+<div id="child" style=" 
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	background: red;
+	border-radius: 50%;
+ "></div>
+	<script>
+	// ===========================1111==========================
+		// var child = document.getElementById("child"),
+		// 	centerX = centerY = 200,
+		// 	speed = 15,
+		// 	radius = 100,
+		// 	startGradus = 0,
+		// 	flag = true,
+		// 	a = 0;
+
+		// 	function f() {
+		// 		a += speed;
+		// 		var rad = Math.PI / 180 * (a - startGradus);
+		// 		child.style.top = Math.sin(rad) * radius + centerY + "px";
+		// 		child.style.left = Math.cos(rad) * radius + centerX + "px";
+		// 		if(a >= 360){
+		// 			a = 0;
+		// 			centerX = centerX * 2;
+		// 			speed = -speed;
+		// 			startGradus = 180;
+		// 		}
+		// 		if(a <= -360){
+		// 			a = 0;
+		// 			centerX = centerX / 2;
+		// 			speed = - speed;
+		// 			startGradus = 0;
+		// 		}
+		// 	}
+		// 	setInterval(f,50);
+
+		// ==========================22222=======================
+			// var child = document.getElementById("child"),
+			// centerX = centerY = 200,
+			// speed = 15,
+			// radius = 100,
+			// startGradus = 180,
+			// flag = true,
+			// flag2 = true,
+			// a = 0;
+
+			// function f() {
+			// 	a -= speed;
+			// 	var rad = Math.PI / 180 * (a - startGradus);
+			// 	child.style.top = Math.sin(rad) * radius + centerY + "px";
+			// 	child.style.left = Math.cos(rad) * radius + centerX + "px";
+			// 	if(a <= -180 && flag == true){
+			// 		a = 0;
+			// 		centerX = 400;
+			// 		speed = -speed;
+			// 		startGradus = 180;
+			// 		flag = false;
+			// 		// alert("1");
+			// 	}
+			// 	if(a >= 180 && flag == false){
+			// 		a = 0;
+			// 		centerX = 600;
+			// 		speed = -speed;
+			// 		startGradus = 180;
+			// 		// alert("2");
+			// 	}
+			// 	if(a <= -360 && flag ==false && flag2 == true){
+			// 		a = 0;
+			// 		centerX = 400;
+			// 		speed = -speed;
+			// 		startGradus = 360;
+			// 		flag = true;
+			// 		// alert("3");
+			// 	}
+			// 	if(a >= 180 && flag == true){
+			// 		a = 0;
+			// 		centerX = 200;
+			// 		speed = -speed;
+			// 		flag = false;
+			// 		flag2 = false;
+			// 		// alert("4");
+			// 	}
+			// 	if(a <= -360 && flag2 == false){
+			// 		// clearInterval(stop)
+			// 		a = 0;
+			// 		centerX = 400;
+			// 		startGradus = 180;
+			// 		speed = -speed;
+			// 		flag2 = true;
+			// 		// alert("5");
+			// 	}
+			// }
+			// var  stop = setInterval(f,50);
+
+		// ///////////////////////main//////////////////////////
+		// var child = document.getElementById("child"),
+		// centerX = centerY = 200,
+		// speed = 15,
+		// radius = 100,
+		// startGradus = 90,
+		// flag = true,
+		// a = 0;
+
+		// function f() {
+		// 	a += speed;
+		// 	var rad = Math.PI / 180 * (a - startGradus);
+		// 	child.style.top = Math.sin(rad) * radius + centerY + "px";
+		// 	child.style.left = Math.cos(rad) * radius + centerX + "px";
+		// 	if(a >= 180 && flag == true){
+		// 		a = 0;
+		// 		centerY = centerY*2;
+		// 		speed  = -speed;
+		// 		flag = false;
+		// 	}
+		// 	if(a <= -360 && flag == false){
+		// 		a = 0;
+		// 		centerY = centerY/2;
+		// 		speed = -speed;
+		// 		startGradus = 270;
+		// 	}
+		// 	if(a >= 360 && flag == false){
+		// 		a = 0;
+		// 		startGradus = 90;
+		// 		centerY = centerY*2;
+		// 		speed  = -speed;
+		// 		flag = true;
+		// 	}
+		// 	if(a <= -360 && flag == true){
+		// 		a = 0;
+		// 		centerY = centerY/2;
+		// 		speed = -speed;
+		// 		startGradus = 270;
+		// 		flag = false;
+		// 	}
+		// }
+		// setInterval(f,50);
+
+
+
+
+	</script>
+</body>
+</html>

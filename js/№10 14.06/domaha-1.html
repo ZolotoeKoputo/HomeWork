@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>domaha1</title>
+</head>
+<body>
+	<div id="child" style=" 
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	background: red;
+	border-radius: 50%;
+ "></div>
+	<script>
+	var child = document.getElementById("child"),
+		centerX = centerY = 200,
+		speed = 10,
+		radius = 100,
+		startGradus = 0,
+		flag = true,
+		a = 0;
+
+		function f() {
+			a += speed;
+			var rad = Math.PI / 180 * (a - startGradus);
+			child.style.top = Math.sin(rad) * radius + centerY + "px";
+			child.style.left = Math.cos(rad) * radius + centerX + "px";
+			if(a >= 360){
+				a = 0;
+				centerX = centerX * 2;
+				speed = -speed;
+				startGradus = 180;
+			}
+			if(a <= -360){
+				a = 0;
+				centerX = centerX / 2;
+				speed = - speed;
+				startGradus = 0;
+			}
+		}
+		setInterval(f,50);
+		</script>
+</body>
+</html>

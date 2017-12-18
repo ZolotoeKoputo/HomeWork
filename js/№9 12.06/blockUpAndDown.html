@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Домаха №1</title>
+</head>
+<body>
+	<div id="parent" style="width: 200px;
+			height: 600px;
+			position: relative;
+			margin: 0 auto;
+			border: 1px solid grey;
+			background: #000; 
+			overflow: hidden; 
+			">
+		<div id="child" style="position: absolute;
+			left: 0;
+			color: #fff;
+			background: #ccc;
+			padding: 12px;">
+		</div>
+</div>
+	<script>
+		var parent = document.getElementById("parent"),
+			child = document.getElementById("child"),
+			speed = 5,
+			temp = 0,
+			coord = parseInt(parent.style.height);
+			// getCopute
+			child.style.width = parent.style.width;
+
+			function f() {
+				// child.style.top = (temp += speed) + "px";
+				coord -= speed;
+				child.style.top = coord + "px";
+				if(parseInt(child.style.top) < 0 ){
+					coord = -speed;
+				}
+			}
+			setInterval(f, 50);
+	</script>
+</body>
+</html>

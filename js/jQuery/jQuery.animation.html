@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animation</title>
+	<style>
+		div{
+			border: 1px solid #000;
+			width: 600px;
+			margin: 0 auto;
+			text-align: center;
+		}
+	</style>
+	<script src = "jquery-3.2.1.js"></script>
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+</head>
+<body>
+	<!-- <input type="button" value="Hide" id="a">
+	<input type="button" value="Show" id="b">
+	<input type="button" value="SlideToggle" id="c">
+	<input type="button" value="fadeOut" id="f">
+	<input type="button" value="fadeIn" id="e">
+	<input type="button" value="fadeToggle" id="g"> -->
+	<input type="button" value="Animate" id="A">
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis, amet laboriosam maxime aliquam, accusamus sunt dignissimos corporis minima accusantium tempore ducimus eligendi architecto, inventore, error sint! Voluptatum ab harum unde, dolore pariatur, nesciunt assumenda ut consequuntur doloribus voluptatibus repellat nihil suscipit ad sit magnam. Voluptate et cumque magni, qui eveniet cupiditate ipsa unde non, maxime natus quibusdam. Voluptate commodi, obcaecati incidunt fuga, fugit quisquam itaque assumenda odit nulla nemo maxime voluptatem veniam vitae eum harum asperiores eos expedita facere hic amet qui unde animi corrupti inventore! Numquam accusamus corporis quae delectus, velit ad vitae repellat optio ducimus saepe. Magnam distinctio cum unde molestias quis minus eligendi facilis molestiae eos quos, officia quia, ipsa mollitia sit animi dicta sunt recusandae, labore nisi nesciunt dolorem culpa. Dolorem laborum at ad minima beatae maiores distinctio molestiae, accusamus, ullam, molestias dignissimos asperiores provident consequatur libero dolor reiciendis. Explicabo molestiae officia soluta, at culpa iure atque hic labore itaque ratione ducimus ipsum laboriosam quaerat temporibus deserunt, libero vel omnis reprehenderit aspernatur ipsam! Fugiat libero placeat, dolorem in doloribus nam necessitatibus, iusto minus inventore facilis molestias blanditiis. Aliquid sint architecto amet illum dolor ratione quas sapiente sit animi expedita velit, assumenda quaerat, error suscipit maiores.</div>
+	<div class="complete" style="display: none;">
+		<h1 style = "color: green;">Complete</h1>
+	</div>
+	<script>
+		$(function() {
+			// $("#a").on("click", function() {
+			// 	$("div").slideUp("slow");
+			// });
+			// $("#b").on("click", function() {
+			// 	$("div").slideDown("slow");
+			// });
+			// $("#c").on("click", function() {
+			// 	$("div").slideToggle();
+			// });
+			// $("#e").on("click", function() {
+			// 	$("div").fadeIn();
+			// });
+			// $("#f").on("click", function() {
+			// 	$("div").fadeOut();
+			// });
+			// $("#g").on("click", function() {
+			// 	$("div").fadeToggle(500);
+			// });
+
+			$("#A").on("click", function() {
+				// $("div").animate({
+				// 	width: "toggle",
+				// 	opacity: "toggle"
+				// }, 1000, "easeInOutBack")
+
+				$("div").animate({
+						width: "50%",
+						height: "50%",
+					}, {
+						duration: 1000,
+						easing: "easeInOutQuad", // specialEasing: {"", ""}
+						queue: false,
+						step: function(n) {
+								$("#A").css('margin', n)
+							}
+							// olways: function () {
+							// 	$(".complete").css('display', 'block');
+							// }
+
+						// fail: function () {
+						// 	$(".error").css('display', 'block');
+						// }
+					}).animate({
+						fontSize: "28px"
+					}, {
+						duration: 1000,
+						queue: false
+					})
+					.animate({
+						borderWidth: "10px"
+					}, 540),
+
+					$("div").queue(function() {
+						$(this).addClass('element');
+					})
+					// $("div").animate({borderColor : "red"}, 1000)
+			});
+
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body > *{
+	margin: 0 auto;
+}
+form{
+	background: url(img/3.png) no-repeat center;
+	width: 500px;
+	height: 600px;
+	font-size: 20px;
+	text-align: center;
+}
+.napitok{
+	background: rgba(0, 0, 0, 0.7);
+	width: 300px;
+	margin-left: 95px;
+	margin-top: 50px;
+	color: #fff;
+	font-size: 18px;
+}
+.napitok1{
+background: url("img/1-1.png")no-repeat;
+width: 200px;
+height: 200px;
+z-index: 1;
+position: relative;
+top: 90px;
+left: 170px;
+display: none;
+}
+.napitok2{
+background: url("img/2-2.png")no-repeat;
+width: 200px;
+height: 200px;
+z-index: 1;
+position: relative;
+top: 90px;
+left: 170px;
+display: none;
+}
+.napitok3{
+background: url("img/3-3.png")no-repeat;
+width: 200px;
+height: 200px;
+z-index: 1;
+position: relative;
+top: 90px;
+left: 170px;
+/*display: none;*/
+}
+.napitok4{
+background: url("img/4-4.png")no-repeat;
+width: 200px;
+height: 200px;
+z-index: 1;
+position: relative;
+top: 85px;
+left: 170px;
+display: none;
+}
